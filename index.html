@@ -54,6 +54,16 @@
             transform: scale(1.05);
             filter: brightness(1.1);
         }
+        .btn-skip {
+            background-color: #6b7280;
+            color: #ffffff;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        .btn-skip:hover {
+            background-color: #4b5563;
+            transform: scale(1.05);
+        }
         .search-bar, .form-input {
             background-color: #2a2a2a;
             border: 1px solid #3a3a3a;
@@ -446,7 +456,14 @@
                     <h3 class="text-lg font-semibold text-green-400 mb-2">Description</h3>
                     <p id="modal-description" class="text-gray-300 mb-6"></p>
                 </div>
-                <a id="modal-download-link" href="#" class="btn-download block py-3 px-4 rounded-lg w-full text-base text-center mt-4"><i class="fas fa-download mr-2"></i> Confirm Download</a>
+                <div class="flex gap-2 mt-4">
+                    <a id="modal-download-link" href="#" class="btn-download block py-3 px-4 rounded-lg flex-1 text-base text-center">
+                        <i class="fas fa-download mr-2"></i> Confirm Download
+                    </a>
+                    <button id="modal-skip-button" class="btn-skip py-3 px-4 rounded-lg text-base">
+                        <i class="fas fa-bolt mr-2"></i> Skip & Download
+                    </button>
+                </div>
             </div>
         </div>
     </div>
@@ -549,6 +566,20 @@
             gameModal.querySelector('#modal-img').src = imgSrc;
             gameModal.querySelector('#modal-description').textContent = description;
             gameModal.querySelector('#modal-download-link').href = downloadLink;
+            
+            // Set up skip button functionality
+            const skipButton = gameModal.querySelector('#modal-skip-button');
+            skipButton.onclick = function() {
+                // Track skip action
+                gtag('event', 'skip_download', {
+                    'event_category': 'game_download',
+                    'event_label': title + ' - Skipped',
+                    'value': 1
+                });
+                
+                // Redirect directly to download link
+                window.location.href = downloadLink;
+            };
             
             gameModal.classList.remove('hidden');
             document.body.style.overflow = 'hidden';
