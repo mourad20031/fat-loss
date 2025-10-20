@@ -3,296 +3,287 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Free Fat Loss Ebook | Transform Your Body</title>
+  <title>Get Your Free Fat Loss Ebook</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --primary: #3b82f6;
+      --accent: #f43f5e;
+      --bg: #f8fafc;
+      --card: #fff;
+      --text: #222;
+      --radius: 18px;
+    }
     body {
       margin: 0;
       font-family: 'Inter', Arial, sans-serif;
-      background: #f7f9fc;
-      color: #222;
+      background: var(--bg);
+      color: var(--text);
     }
-    .hero {
-      background: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
-      padding: 3rem 1rem 2rem 1rem;
+    .container {
+      max-width: 420px;
+      margin: 0 auto;
+      padding: 1rem;
+    }
+    .header-card {
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: 0 6px 32px rgba(60,60,90,.07);
+      padding: 2rem 1rem 1.5rem 1rem;
+      margin-top: 2rem;
       text-align: center;
-      position: relative;
-      overflow: hidden;
     }
-    .hero img {
-      width: 120px;
-      border-radius: 16px;
-      margin-bottom: 1.5rem;
-      border: 4px solid #fff;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.14);
-      background: #fff;
-    }
-    .hero h1 {
-      font-size: 2.4rem;
-      font-weight: 700;
+    .header-card img {
+      width: 96px;
+      height: 124px;
+      object-fit: cover;
+      border-radius: 12px;
       margin-bottom: 1rem;
-      color: #2d3748;
+      box-shadow: 0 4px 16px rgba(60,60,90,0.10);
+      border: 2px solid var(--primary);
     }
-    .hero p {
-      font-size: 1.2rem;
-      margin-bottom: 2rem;
-      color: #4a5568;
-      max-width: 480px;
-      margin-left: auto;
-      margin-right: auto;
+    .header-card h1 {
+      font-size: 1.65rem;
+      margin-bottom: 0.4rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+    .header-card p {
+      font-size: 1.07rem;
+      color: #444;
+      margin-bottom: 1.2rem;
+    }
+    .benefits {
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+      margin-bottom: 1.2rem;
+    }
+    .benefit {
+      background: #f1f5f9;
+      border-radius: 9px;
+      padding: 0.7rem 1rem;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+    }
+    .benefit-icon {
+      color: var(--accent);
+      font-size: 1.3rem;
+    }
+    .cta {
+      display: flex;
+      justify-content: center;
+      margin: 1.2rem 0 0.6rem 0;
     }
     .cta-btn {
-      display: inline-block;
-      background: #e53e3e;
+      background: var(--accent);
       color: #fff;
       font-weight: bold;
-      padding: 1rem 2.5rem;
+      border: none;
       border-radius: 8px;
-      text-decoration: none;
-      font-size: 1.15rem;
-      box-shadow: 0 3px 14px rgba(229, 62, 62, 0.13);
+      padding: 0.9rem 2.2rem;
+      font-size: 1.11rem;
+      cursor: pointer;
+      box-shadow: 0 2px 10px rgba(244,63,94,0.11);
       transition: background 0.2s;
     }
     .cta-btn:hover {
-      background: #c53030;
+      background: #be123c;
     }
-    .features, .about, .faq, .testimonial, .download-counter {
-      max-width: 700px;
-      margin: 2.5rem auto 0 auto;
-      padding: 2rem 1rem;
-      background: #fff;
-      border-radius: 16px;
-      box-shadow: 0 8px 32px rgba(60,60,90,.08);
-    }
-    .features h2, .about h2, .faq h2 {
+    .form-card {
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: 0 6px 32px rgba(60,60,90,.07);
+      padding: 1.3rem 1rem 1.3rem 1rem;
+      margin-top: 1.6rem;
       text-align: center;
-      font-size: 1.7rem;
-      margin-bottom: 1.5rem;
-      color: #2d3748;
     }
-    .feature-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-      justify-content: center;
-      margin-bottom: 1rem;
-    }
-    .feature {
-      flex: 1 1 200px;
-      min-width: 180px;
-      background: #f7fafc;
-      border-radius: 10px;
-      padding: 1.4rem 1rem;
-      text-align: center;
-      box-shadow: 0 2px 10px rgba(60,60,90,0.06);
-    }
-    .feature h3 {
-      margin: 0.5rem 0 0.7rem 0;
+    .form-card h2 {
       font-size: 1.15rem;
-      color: #e53e3e;
+      color: var(--primary);
+      margin-bottom: 0.7rem;
     }
-    .testimonial {
-      margin: 2rem auto 1rem auto;
-      background: #fff5f5;
-      border-left: 5px solid #e53e3e;
-      border-radius: 10px;
-      padding: 1.5rem;
+    .ebook-form {
+      display: flex;
+      gap: 0.5rem;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 0.5rem;
+    }
+    .ebook-form input[type="email"] {
+      width: 100%;
+      max-width: 290px;
+      padding: 0.8rem;
+      border-radius: 7px;
+      border: 1px solid #e0e7ef;
+      font-size: 1rem;
+      margin-bottom: 0.6rem;
+      background: #f1f5f9;
+    }
+    .ebook-form button {
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      border-radius: 7px;
+      padding: 0.7rem 2rem;
+      font-size: 1.05rem;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 2px 10px rgba(59,130,246,0.12);
+      transition: background 0.2s;
+    }
+    .ebook-form button:hover {
+      background: #1d4ed8;
+    }
+    .about-card {
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: 0 6px 32px rgba(60,60,90,.07);
+      padding: 1.2rem 1rem;
+      margin-top: 1.6rem;
+      text-align: left;
+    }
+    .about-author {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 0.7rem;
+    }
+    .author-img {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--primary);
+    }
+    .author-name {
+      font-weight: 700;
+      color: var(--primary);
+    }
+    .about-card p {
+      font-size: 0.98rem;
+      color: #444;
+      margin-bottom: 0;
+    }
+    .testimonial-card {
+      background: #f1f5f9;
+      border-left: 5px solid var(--primary);
+      border-radius: 12px;
+      padding: 1.1rem 1rem;
+      margin-top: 1.4rem;
       font-style: italic;
-      color: #4a5568;
-      box-shadow: 0 2px 10px rgba(60,60,90,0.08);
-      max-width: 420px;
+      color: #333;
+      box-shadow: 0 2px 10px rgba(60,60,90,0.07);
+      max-width: 390px;
+      margin-left: auto;
+      margin-right: auto;
     }
-    .testimonial .author {
-      margin-top: 1rem;
+    .testimonial-author {
+      margin-top: 0.7rem;
       font-weight: bold;
       font-style: normal;
-      color: #e53e3e;
-    }
-    .download-counter {
-      text-align: center;
-      color: #2d3748;
-      font-size: 1.1rem;
-      margin-bottom: 0;
-      margin-top: 2rem;
-      background: #ebf8ff;
-      border-left: 5px solid #4299e1;
-    }
-    .about-img {
-      width: 76px;
-      border-radius: 50%;
-      margin: 0 auto 1rem auto;
-      display: block;
-      border: 2px solid #eee;
-    }
-    .about p {
-      text-align: center;
-      color: #555;
-      font-size: 1rem;
-    }
-    .faq-list {
-      margin-top: 1rem;
-    }
-    .faq-q {
-      font-weight: bold;
-      margin-bottom: 0.3rem;
-      color: #e53e3e;
-      margin-top: 1.2rem;
+      color: var(--primary);
+      font-size: 0.98rem;
     }
     .footer {
       text-align: center;
-      color: #888;
-      font-size: 1rem;
+      color: #aaa;
+      font-size: 0.98rem;
       padding: 2rem 0 1rem 0;
-      background: #f7fafc;
-      margin-top: 2rem;
+      background: var(--bg);
+      margin-top: 2.2rem;
     }
-    .social-icons {
-      margin: 0.5rem 0 0.5rem 0;
-    }
-    .social-icons a {
-      display: inline-block;
-      margin: 0 0.4rem;
-      color: #e53e3e;
-      font-size: 1.4rem;
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-    .social-icons a:hover {
-      color: #c53030;
-    }
-    input, button {
-      font-family: inherit;
-    }
-    form {
-      margin: 2rem auto 0 auto;
-      max-width: 420px;
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-    input[type="text"], input[type="email"] {
-      padding: 0.8rem;
-      border-radius: 6px;
-      border: 1px solid #e2e8f0;
-      font-size: 1rem;
-    }
-    button[type="submit"] {
-      background: #4299e1;
-      color: #fff;
-      font-weight: bold;
-      padding: 0.9rem;
-      border-radius: 8px;
-      border: none;
-      font-size: 1.1rem;
-      cursor: pointer;
-      transition: background 0.2s;
-    }
-    button[type="submit"]:hover {
-      background: #2b6cb0;
-    }
-    @media (max-width: 700px) {
-      .features, .about, .faq, .testimonial, .download-counter {
-        margin: 1.3rem 0 0 0;
-        padding: 1rem 0.5rem;
-        border-radius: 8px;
+    /* Sticky CTA for mobile */
+    @media (max-width: 600px) {
+      .container {
+        padding: 0.5rem;
       }
-      .feature-list {
-        flex-direction: column;
-        gap: 1rem;
+      .header-card, .form-card, .about-card {
+        padding: 1.1rem 0.5rem;
+        border-radius: 13px;
       }
-      .feature {
-        min-width: 0;
-        border-radius: 8px;
+      .header-card {
+        margin-top: 1.1rem;
       }
-      .hero h1 {
-        font-size: 1.45rem;
+      .footer {
+        padding: 1.2rem 0 1rem 0;
+        font-size: 0.95rem;
       }
-      .hero img {
-        width: 76px;
+      .sticky-cta {
+        position: fixed;
+        left: 0; right: 0; bottom: 0;
+        background: var(--accent);
+        color: #fff;
+        text-align: center;
+        padding: 0.85rem;
+        font-size: 1.09rem;
+        font-weight: bold;
+        z-index: 99;
+        box-shadow: 0 -2px 12px rgba(244,63,94,0.11);
+        cursor: pointer;
+        transition: background 0.2s;
+      }
+      .sticky-cta:active {
+        background: #be123c;
       }
     }
   </style>
-  <!-- Font Awesome for social icons -->
-  <script src="https://kit.fontawesome.com/7f7b78e7a9.js" crossorigin="anonymous"></script>
+  <!-- For icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
 </head>
 <body>
-  <section class="hero">
-    <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?fit=crop&w=400&q=80" alt="Fat Loss Ebook">
-    <h1>Download Your Free Fat Loss Ebook</h1>
-    <p>Kickstart your transformation with our comprehensive, science-backed fat loss guide. Get proven strategies, meal plans, and workout tips—free for a limited time!</p>
-    <a href="#download" class="cta-btn">Get My Free Ebook</a>
-  </section>
-
-  <section class="download-counter">
-    <span><strong>Over 17,000 downloads</strong> this month!</span>
-  </section>
-
-  <section class="features">
-    <h2>What You'll Learn Inside:</h2>
-    <div class="feature-list">
-      <div class="feature">
-        <h3>Science-Based Strategies</h3>
-        <p>Understand what really works for fat loss and why.</p>
+  <div class="container">
+    <div class="header-card">
+      <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?fit=crop&w=400&q=80" alt="Fat Loss Ebook">
+      <h1>Get Your Free Fat Loss Ebook</h1>
+      <p>Discover the proven strategies to burn fat, boost energy, and transform your body—starting today. Download Mourad’s expert fat loss ebook for free!</p>
+      <div class="benefits">
+        <div class="benefit"><span class="benefit-icon"><i class="fa-solid fa-circle-check"></i></span> Science-backed fat loss tips</div>
+        <div class="benefit"><span class="benefit-icon"><i class="fa-solid fa-circle-check"></i></span> Simple meal plans & recipes</div>
+        <div class="benefit"><span class="benefit-icon"><i class="fa-solid fa-circle-check"></i></span> Fast, effective home workouts</div>
+        <div class="benefit"><span class="benefit-icon"><i class="fa-solid fa-circle-check"></i></span> Motivation & habit secrets</div>
       </div>
-      <div class="feature">
-        <h3>Meal Plans & Recipes</h3>
-        <p>Easy, delicious meal ideas to help you burn fat.</p>
-      </div>
-      <div class="feature">
-        <h3>Quick Home Workouts</h3>
-        <p>No gym needed—maximize fat burning from home.</p>
-      </div>
-      <div class="feature">
-        <h3>Motivation & Mindset</h3>
-        <p>Stay on track with expert motivation and habit tips.</p>
+      <div class="cta">
+        <a href="#download" class="cta-btn">Download Free Ebook</a>
       </div>
     </div>
-    <div class="testimonial">
-      “This ebook made fat loss simple. I lost over 18 pounds in 10 weeks, and my energy is through the roof!”
-      <div class="author">– Sarah M.</div>
-    </div>
-    <div style="text-align:center; margin-top:2rem;">
-      <a href="#download" class="cta-btn">Download the Free Ebook</a>
-    </div>
-  </section>
 
-  <section class="about">
-    <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?fit=crop&w=400&q=80" class="about-img" alt="Author">
-    <h2>About the Author</h2>
-    <p><strong>Mourad Fitness</strong> is a certified nutritionist and personal trainer with over 10 years of helping people lose fat and feel their best. His science-based, supportive approach has helped thousands achieve lasting results.</p>
-  </section>
-
-  <section class="faq">
-    <h2>Frequently Asked Questions</h2>
-    <div class="faq-list">
-      <div class="faq-q">Is the ebook really free?</div>
-      <div>Yes! Download your copy at no charge, for a limited time.</div>
-      <div class="faq-q">Do I need equipment or a gym?</div>
-      <div>Nope—workouts are designed for home and all fitness levels.</div>
-      <div class="faq-q">Can I share the ebook?</div>
-      <div>Absolutely! Share the link and help others start their journey.</div>
-      <div class="faq-q">Will this work for beginners?</div>
-      <div>Yes, the ebook is beginner-friendly and easy to follow.</div>
+    <div class="form-card" id="download">
+      <h2>Get Instant Access</h2>
+      <form class="ebook-form">
+        <input type="email" placeholder="Enter your email" required>
+        <button type="submit">Send Me the Ebook</button>
+      </form>
+      <p style="text-align:center; color:#888; font-size:0.93rem; margin-top:0.7rem;">No spam. Your privacy is protected.</p>
     </div>
-  </section>
 
-  <section id="download" class="features" style="margin-top:2.5rem;">
-    <h2>Get Your Free Ebook Now</h2>
-    <form>
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
-      <button type="submit">Send Me the Ebook</button>
-    </form>
-    <p style="text-align:center; color:#888; font-size:0.95rem; margin-top:0.7rem;">We'll email you the download link immediately. Your privacy is protected.</p>
-  </section>
-
-  <div class="footer">
-    <div class="social-icons">
-      <a href="#"><i class="fab fa-facebook-square"></i></a>
-      <a href="#"><i class="fab fa-instagram"></i></a>
-      <a href="#"><i class="fab fa-twitter"></i></a>
+    <div class="about-card">
+      <div class="about-author">
+        <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?fit=crop&w=400&q=80" class="author-img" alt="Author">
+        <span class="author-name">Mourad Fitness</span>
+      </div>
+      <p>Certified nutritionist & trainer. 10+ years helping thousands lose fat and gain confidence. This ebook shares his most effective methods—no hype, just results.</p>
     </div>
-    &copy; 2025 Mourad Fitness. <a href="#" style="color:#e53e3e; text-decoration:underline;">Privacy Policy</a> · <a href="#" style="color:#e53e3e; text-decoration:underline;">Terms</a>
+
+    <div class="testimonial-card">
+      “I lost 12kg in 3 months following Mourad’s guide. I have more energy and feel amazing—highly recommend!”
+      <div class="testimonial-author">– Sarah M.</div>
+    </div>
   </div>
+  <div class="footer">
+    &copy; 2025 Mourad Fitness. <a href="#" style="color:var(--primary); text-decoration:underline;">Privacy</a> · <a href="#" style="color:var(--primary); text-decoration:underline;">Terms</a>
+  </div>
+  <!-- Sticky CTA for mobile -->
+  <div class="sticky-cta" onclick="window.location='#download'" style="display:none;">
+    📥 Download Free Ebook
+  </div>
+  <script>
+    // Show sticky CTA only on mobile
+    if(window.innerWidth < 600) {
+      document.querySelector('.sticky-cta').style.display = 'block';
+    }
+  </script>
 </body>
 </html>
