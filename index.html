@@ -3,26 +3,29 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Fat Loss Transformation Program</title>
+  <title>Free Fat Loss Ebook | Transform Your Body</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
       font-family: 'Inter', Arial, sans-serif;
-      background: #f7fafc;
+      background: #f7f9fc;
       color: #222;
     }
     .hero {
       background: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
       padding: 3rem 1rem 2rem 1rem;
       text-align: center;
+      position: relative;
+      overflow: hidden;
     }
     .hero img {
       width: 120px;
-      border-radius: 50%;
+      border-radius: 16px;
       margin-bottom: 1.5rem;
       border: 4px solid #fff;
       box-shadow: 0 2px 12px rgba(0,0,0,0.14);
+      background: #fff;
     }
     .hero h1 {
       font-size: 2.4rem;
@@ -34,6 +37,9 @@
       font-size: 1.2rem;
       margin-bottom: 2rem;
       color: #4a5568;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
     }
     .cta-btn {
       display: inline-block;
@@ -50,7 +56,7 @@
     .cta-btn:hover {
       background: #c53030;
     }
-    .features {
+    .features, .about, .faq, .testimonial, .download-counter {
       max-width: 700px;
       margin: 2.5rem auto 0 auto;
       padding: 2rem 1rem;
@@ -58,7 +64,7 @@
       border-radius: 16px;
       box-shadow: 0 8px 32px rgba(60,60,90,.08);
     }
-    .features h2 {
+    .features h2, .about h2, .faq h2 {
       text-align: center;
       font-size: 1.7rem;
       margin-bottom: 1.5rem;
@@ -86,7 +92,6 @@
       color: #e53e3e;
     }
     .testimonial {
-      max-width: 420px;
       margin: 2rem auto 1rem auto;
       background: #fff5f5;
       border-left: 5px solid #e53e3e;
@@ -95,6 +100,7 @@
       font-style: italic;
       color: #4a5568;
       box-shadow: 0 2px 10px rgba(60,60,90,0.08);
+      max-width: 420px;
     }
     .testimonial .author {
       margin-top: 1rem;
@@ -102,14 +108,90 @@
       font-style: normal;
       color: #e53e3e;
     }
+    .download-counter {
+      text-align: center;
+      color: #2d3748;
+      font-size: 1.1rem;
+      margin-bottom: 0;
+      margin-top: 2rem;
+      background: #ebf8ff;
+      border-left: 5px solid #4299e1;
+    }
+    .about-img {
+      width: 76px;
+      border-radius: 50%;
+      margin: 0 auto 1rem auto;
+      display: block;
+      border: 2px solid #eee;
+    }
+    .about p {
+      text-align: center;
+      color: #555;
+      font-size: 1rem;
+    }
+    .faq-list {
+      margin-top: 1rem;
+    }
+    .faq-q {
+      font-weight: bold;
+      margin-bottom: 0.3rem;
+      color: #e53e3e;
+      margin-top: 1.2rem;
+    }
     .footer {
       text-align: center;
       color: #888;
       font-size: 1rem;
       padding: 2rem 0 1rem 0;
+      background: #f7fafc;
+      margin-top: 2rem;
+    }
+    .social-icons {
+      margin: 0.5rem 0 0.5rem 0;
+    }
+    .social-icons a {
+      display: inline-block;
+      margin: 0 0.4rem;
+      color: #e53e3e;
+      font-size: 1.4rem;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .social-icons a:hover {
+      color: #c53030;
+    }
+    input, button {
+      font-family: inherit;
+    }
+    form {
+      margin: 2rem auto 0 auto;
+      max-width: 420px;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    input[type="text"], input[type="email"] {
+      padding: 0.8rem;
+      border-radius: 6px;
+      border: 1px solid #e2e8f0;
+      font-size: 1rem;
+    }
+    button[type="submit"] {
+      background: #4299e1;
+      color: #fff;
+      font-weight: bold;
+      padding: 0.9rem;
+      border-radius: 8px;
+      border: none;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    button[type="submit"]:hover {
+      background: #2b6cb0;
     }
     @media (max-width: 700px) {
-      .features {
+      .features, .about, .faq, .testimonial, .download-counter {
         margin: 1.3rem 0 0 0;
         padding: 1rem 0.5rem;
         border-radius: 8px;
@@ -130,57 +212,87 @@
       }
     }
   </style>
+  <!-- Font Awesome for social icons -->
+  <script src="https://kit.fontawesome.com/7f7b78e7a9.js" crossorigin="anonymous"></script>
 </head>
 <body>
   <section class="hero">
-    <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?fit=crop&w=400&q=80" alt="Fat Loss Transformation">
-    <h1>Transform Your Body, Transform Your Life</h1>
-    <p>Join our proven Fat Loss Transformation Program and achieve the results you’ve always wanted. 
-      Expert guidance, personalized nutrition plans, and motivational support—start your journey now!</p>
-    <a href="#book" class="cta-btn">Book Your Free Consultation</a>
+    <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?fit=crop&w=400&q=80" alt="Fat Loss Ebook">
+    <h1>Download Your Free Fat Loss Ebook</h1>
+    <p>Kickstart your transformation with our comprehensive, science-backed fat loss guide. Get proven strategies, meal plans, and workout tips—free for a limited time!</p>
+    <a href="#download" class="cta-btn">Get My Free Ebook</a>
+  </section>
+
+  <section class="download-counter">
+    <span><strong>Over 17,000 downloads</strong> this month!</span>
   </section>
 
   <section class="features">
-    <h2>Why Choose Our Fat Loss Program?</h2>
+    <h2>What You'll Learn Inside:</h2>
     <div class="feature-list">
       <div class="feature">
-        <h3>Personalized Plans</h3>
-        <p>Custom workouts and meal plans tailored to your body and goals.</p>
+        <h3>Science-Based Strategies</h3>
+        <p>Understand what really works for fat loss and why.</p>
       </div>
       <div class="feature">
-        <h3>Expert Coaching</h3>
-        <p>Certified trainers and nutritionists to keep you motivated and on track.</p>
+        <h3>Meal Plans & Recipes</h3>
+        <p>Easy, delicious meal ideas to help you burn fat.</p>
       </div>
       <div class="feature">
-        <h3>Real Community</h3>
-        <p>Supportive group and 1-on-1 sessions to keep you accountable.</p>
+        <h3>Quick Home Workouts</h3>
+        <p>No gym needed—maximize fat burning from home.</p>
       </div>
       <div class="feature">
-        <h3>Track Your Progress</h3>
-        <p>Weekly check-ins and progress tracking for real, sustainable change.</p>
+        <h3>Motivation & Mindset</h3>
+        <p>Stay on track with expert motivation and habit tips.</p>
       </div>
     </div>
     <div class="testimonial">
-      “I lost 25 pounds in just three months and gained so much confidence! The team truly cares and the program is easy to follow.”
-      <div class="author">– Alex T.</div>
+      “This ebook made fat loss simple. I lost over 18 pounds in 10 weeks, and my energy is through the roof!”
+      <div class="author">– Sarah M.</div>
     </div>
     <div style="text-align:center; margin-top:2rem;">
-      <a href="#book" class="cta-btn">Book Now & Start Losing Fat</a>
+      <a href="#download" class="cta-btn">Download the Free Ebook</a>
     </div>
   </section>
 
-  <section id="book" class="features" style="margin-top:2.5rem;">
-    <h2>Book Your Free Consultation</h2>
-    <form style="max-width:420px;margin:0 auto;display:flex;flex-direction:column;gap:1rem;">
-      <input type="text" placeholder="Your Name" required style="padding:0.8rem;border-radius:6px;border:1px solid #e2e8f0;font-size:1rem;">
-      <input type="email" placeholder="Your Email" required style="padding:0.8rem;border-radius:6px;border:1px solid #e2e8f0;font-size:1rem;">
-      <input type="tel" placeholder="Phone Number (optional)" style="padding:0.8rem;border-radius:6px;border:1px solid #e2e8f0;font-size:1rem;">
-      <button type="submit" class="cta-btn" style="margin-top:0.8rem;">Book My Free Consultation</button>
+  <section class="about">
+    <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?fit=crop&w=400&q=80" class="about-img" alt="Author">
+    <h2>About the Author</h2>
+    <p><strong>Mourad Fitness</strong> is a certified nutritionist and personal trainer with over 10 years of helping people lose fat and feel their best. His science-based, supportive approach has helped thousands achieve lasting results.</p>
+  </section>
+
+  <section class="faq">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-list">
+      <div class="faq-q">Is the ebook really free?</div>
+      <div>Yes! Download your copy at no charge, for a limited time.</div>
+      <div class="faq-q">Do I need equipment or a gym?</div>
+      <div>Nope—workouts are designed for home and all fitness levels.</div>
+      <div class="faq-q">Can I share the ebook?</div>
+      <div>Absolutely! Share the link and help others start their journey.</div>
+      <div class="faq-q">Will this work for beginners?</div>
+      <div>Yes, the ebook is beginner-friendly and easy to follow.</div>
+    </div>
+  </section>
+
+  <section id="download" class="features" style="margin-top:2.5rem;">
+    <h2>Get Your Free Ebook Now</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <button type="submit">Send Me the Ebook</button>
     </form>
+    <p style="text-align:center; color:#888; font-size:0.95rem; margin-top:0.7rem;">We'll email you the download link immediately. Your privacy is protected.</p>
   </section>
 
   <div class="footer">
-    &copy; 2025 Fat Loss Transformation Program. All rights reserved.
+    <div class="social-icons">
+      <a href="#"><i class="fab fa-facebook-square"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+    </div>
+    &copy; 2025 Mourad Fitness. <a href="#" style="color:#e53e3e; text-decoration:underline;">Privacy Policy</a> · <a href="#" style="color:#e53e3e; text-decoration:underline;">Terms</a>
   </div>
 </body>
 </html>
