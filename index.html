@@ -265,6 +265,38 @@
       0%, 80%, 100% { transform: scale(0.8); opacity: 0.5; }
       40% { transform: scale(1); opacity: 1; }
     }
+    
+    /* FAQ Section Styles */
+    .faq-item {
+      border-bottom: 1px solid #e5e7eb;
+      transition: all 0.3s ease;
+    }
+    .faq-question {
+      padding: 16px 0;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .faq-question:hover {
+      color: #22c55e;
+    }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      color: #6b7280;
+    }
+    .faq-answer.open {
+      max-height: 200px;
+      padding-bottom: 16px;
+    }
+    .faq-icon {
+      transition: transform 0.3s ease;
+    }
+    .faq-item.active .faq-icon {
+      transform: rotate(180deg);
+    }
   </style>
 </head>
 <body class="antialiased">
@@ -279,6 +311,7 @@
             <nav class="hidden md:flex items-center space-x-6">
                 <a href="#trending" class="text-gray-600 hover:text-green-500 transition text-sm font-medium">Trending</a>
                 <a href="#all-mods-header" class="text-gray-600 hover:text-green-500 transition text-sm font-medium">All Games</a>
+                <a href="#faq-section" class="text-gray-600 hover:text-green-500 transition text-sm font-medium">FAQ</a>
                 <a href="javascript:void(0);" onclick="openContactModal()" class="text-gray-600 hover:text-green-500 transition text-sm font-medium">Contact</a>
             </nav>
             <button id="menu-btn" class="md:hidden text-gray-700 text-xl">
@@ -288,6 +321,7 @@
         <div id="mobile-menu" class="hidden md:hidden px-4 pb-3 bg-white border-t border-gray-100">
             <a href="#trending" class="block text-gray-600 hover:text-green-500 transition py-2 text-sm font-medium">Trending</a>
             <a href="#all-mods-header" class="block text-gray-600 hover:text-green-500 transition py-2 text-sm font-medium">All Games</a>
+            <a href="#faq-section" class="block text-gray-600 hover:text-green-500 transition py-2 text-sm font-medium">FAQ</a>
             <a href="javascript:void(0);" onclick="openContactModal()" class="block text-gray-600 hover:text-green-500 transition py-2 text-sm font-medium">Contact</a>
         </div>
     </header>
@@ -576,7 +610,206 @@
                     </div>
                 </div>
 
-                <!-- More hidden games would continue here -->
+                <!-- Additional 10 games -->
+                <div class="game-card rounded-lg overflow-hidden flex flex-col hidden" data-name="Stardew Valley Mod">
+                    <div class="coming-soon-image">Coming Soon</div>
+                    <div class="p-3 flex flex-col flex-grow">
+                        <h3 class="text-sm font-bold text-gray-900 mb-1 truncate">Stardew Valley Mod</h3>
+                        <div class="flex items-center text-xs mb-1 text-yellow-500">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            <span class="text-gray-500 ml-1">5.0</span>
+                        </div>
+                        <div class="text-gray-500 text-xs mb-2">
+                            <i class="fas fa-download mr-1"></i> 
+                            <span class="download-counter" data-count="11200000">11.2M</span>
+                        </div>
+                        <button class="btn-download mt-auto py-2 px-2 rounded-lg w-full text-xs"
+                            onclick="startDownload(this, 'Stardew Valley Mod APK','Unlimited money, instant crop growth, and all items unlocked. Build your perfect farm without limitations.','#')">
+                            Download Now
+                        </button>
+                    </div>
+                </div>
+
+                <div class="game-card rounded-lg overflow-hidden flex flex-col hidden" data-name="Dead Cells Mod">
+                    <div class="coming-soon-image">Coming Soon</div>
+                    <div class="p-3 flex flex-col flex-grow">
+                        <h3 class="text-sm font-bold text-gray-900 mb-1 truncate">Dead Cells Mod</h3>
+                        <div class="flex items-center text-xs mb-1 text-yellow-500">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                            <span class="text-gray-500 ml-1">4.8</span>
+                        </div>
+                        <div class="text-gray-500 text-xs mb-2">
+                            <i class="fas fa-download mr-1"></i> 
+                            <span class="download-counter" data-count="8900000">8.9M</span>
+                        </div>
+                        <button class="btn-download mt-auto py-2 px-2 rounded-lg w-full text-xs"
+                            onclick="startDownload(this, 'Dead Cells Mod APK','Unlock all weapons, infinite health, and all blueprints. Conquer the island without dying.','#')">
+                            Download Now
+                        </button>
+                    </div>
+                </div>
+
+                <div class="game-card rounded-lg overflow-hidden flex flex-col hidden" data-name="GRID Autosport Mod">
+                    <div class="coming-soon-image">Coming Soon</div>
+                    <div class="p-3 flex flex-col flex-grow">
+                        <h3 class="text-sm font-bold text-gray-900 mb-1 truncate">GRID Autosport Mod</h3>
+                        <div class="flex items-center text-xs mb-1 text-yellow-500">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            <span class="text-gray-500 ml-1">5.0</span>
+                        </div>
+                        <div class="text-gray-500 text-xs mb-2">
+                            <i class="fas fa-download mr-1"></i> 
+                            <span class="download-counter" data-count="7400000">7.4M</span>
+                        </div>
+                        <button class="btn-download mt-auto py-2 px-2 rounded-lg w-full text-xs"
+                            onclick="startDownload(this, 'GRID Autosport Mod APK','All cars unlocked, unlimited money, and enhanced performance. Experience realistic racing at its best.','#')">
+                            Download Now
+                        </button>
+                    </div>
+                </div>
+
+                <div class="game-card rounded-lg overflow-hidden flex flex-col hidden" data-name="Township Mod">
+                    <div class="coming-soon-image">Coming Soon</div>
+                    <div class="p-3 flex flex-col flex-grow">
+                        <h3 class="text-sm font-bold text-gray-900 mb-1 truncate">Township Mod</h3>
+                        <div class="flex items-center text-xs mb-1 text-yellow-500">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                            <span class="text-gray-500 ml-1">4.7</span>
+                        </div>
+                        <div class="text-gray-500 text-xs mb-2">
+                            <i class="fas fa-download mr-1"></i> 
+                            <span class="download-counter" data-count="16300000">16.3M</span>
+                        </div>
+                        <button class="btn-download mt-auto py-2 px-2 rounded-lg w-full text-xs"
+                            onclick="startDownload(this, 'Township Mod APK','Unlimited coins and cash. Build your dream town with all buildings and decorations unlocked.','#')">
+                            Download Now
+                        </button>
+                    </div>
+                </div>
+
+                <div class="game-card rounded-lg overflow-hidden flex flex-col hidden" data-name="TOEM: A Photo Adventure">
+                    <div class="coming-soon-image">Coming Soon</div>
+                    <div class="p-3 flex flex-col flex-grow">
+                        <h3 class="text-sm font-bold text-gray-900 mb-1 truncate">TOEM: A Photo Adventure</h3>
+                        <div class="flex items-center text-xs mb-1 text-yellow-500">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            <span class="text-gray-500 ml-1">5.0</span>
+                        </div>
+                        <div class="text-gray-500 text-xs mb-2">
+                            <i class="fas fa-download mr-1"></i> 
+                            <span class="download-counter" data-count="5100000">5.1M</span>
+                        </div>
+                        <button class="btn-download mt-auto py-2 px-2 rounded-lg w-full text-xs"
+                            onclick="startDownload(this, 'TOEM: A Photo Adventure Mod APK','All camera upgrades unlocked from start. Explore the charming world without limitations.','#')">
+                            Download Now
+                        </button>
+                    </div>
+                </div>
+
+                <div class="game-card rounded-lg overflow-hidden flex flex-col hidden" data-name="Monopoly Go Mod">
+                    <div class="coming-soon-image">Coming Soon</div>
+                    <div class="p-3 flex flex-col flex-grow">
+                        <h3 class="text-sm font-bold text-gray-900 mb-1 truncate">Monopoly Go Mod</h3>
+                        <div class="flex items-center text-xs mb-1 text-yellow-500">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                            <span class="text-gray-500 ml-1">4.8</span>
+                        </div>
+                        <div class="text-gray-500 text-xs mb-2">
+                            <i class="fas fa-download mr-1"></i> 
+                            <span class="download-counter" data-count="18700000">18.7M</span>
+                        </div>
+                        <button class="btn-download mt-auto py-2 px-2 rounded-lg w-full text-xs"
+                            onclick="startDownload(this, 'Monopoly Go Mod APK','Unlimited dice rolls and money. Build your empire and bankrupt your friends with ease.','#')">
+                            Download Now
+                        </button>
+                    </div>
+                </div>
+
+                <div class="game-card rounded-lg overflow-hidden flex flex-col hidden" data-name="Call of Duty Mobile Mod">
+                    <div class="coming-soon-image">Coming Soon</div>
+                    <div class="p-3 flex flex-col flex-grow">
+                        <h3 class="text-sm font-bold text-gray-900 mb-1 truncate">Call of Duty Mobile</h3>
+                        <div class="flex items-center text-xs mb-1 text-yellow-500">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            <span class="text-gray-500 ml-1">5.0</span>
+                        </div>
+                        <div class="text-gray-500 text-xs mb-2">
+                            <i class="fas fa-download mr-1"></i> 
+                            <span class="download-counter" data-count="32400000">32.4M</span>
+                        </div>
+                        <button class="btn-download mt-auto py-2 px-2 rounded-lg w-full text-xs"
+                            onclick="startDownload(this, 'Call of Duty Mobile Mod APK','Aimbot, wallhack, unlimited ammo, and all weapons unlocked. Dominate the battlefield.','#')">
+                            Download Now
+                        </button>
+                    </div>
+                </div>
+
+                <div class="game-card rounded-lg overflow-hidden flex flex-col hidden" data-name="Roblox Mod">
+                    <div class="coming-soon-image">Coming Soon</div>
+                    <div class="p-3 flex flex-col flex-grow">
+                        <h3 class="text-sm font-bold text-gray-900 mb-1 truncate">Roblox Mod</h3>
+                        <div class="flex items-center text-xs mb-1 text-yellow-500">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                            <span class="text-gray-500 ml-1">4.7</span>
+                        </div>
+                        <div class="text-gray-500 text-xs mb-2">
+                            <i class="fas fa-download mr-1"></i> 
+                            <span class="download-counter" data-count="41800000">41.8M</span>
+                        </div>
+                        <button class="btn-download mt-auto py-2 px-2 rounded-lg w-full text-xs"
+                            onclick="startDownload(this, 'Roblox Mod APK','Unlimited Robux, all game passes unlocked, and enhanced features for the ultimate gaming experience.','#')">
+                            Download Now
+                        </button>
+                    </div>
+                </div>
+
+                <div class="game-card rounded-lg overflow-hidden flex flex-col hidden" data-name="Genshin Impact Mod">
+                    <div class="coming-soon-image">Coming Soon</div>
+                    <div class="p-3 flex flex-col flex-grow">
+                        <h3 class="text-sm font-bold text-gray-900 mb-1 truncate">Genshin Impact Mod</h3>
+                        <div class="flex items-center text-xs mb-1 text-yellow-500">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            <span class="text-gray-500 ml-1">5.0</span>
+                        </div>
+                        <div class="text-gray-500 text-xs mb-2">
+                            <i class="fas fa-download mr-1"></i> 
+                            <span class="download-counter" data-count="27600000">27.6M</span>
+                        </div>
+                        <button class="btn-download mt-auto py-2 px-2 rounded-lg w-full text-xs"
+                            onclick="startDownload(this, 'Genshin Impact Mod APK','Unlimited Primogems, all characters unlocked, and god mode. Explore Teyvat without limits.','#')">
+                            Download Now
+                        </button>
+                    </div>
+                </div>
+
+                <div class="game-card rounded-lg overflow-hidden flex flex-col hidden" data-name="Pokemon GO Mod">
+                    <div class="coming-soon-image">Coming Soon</div>
+                    <div class="p-3 flex flex-col flex-grow">
+                        <h3 class="text-sm font-bold text-gray-900 mb-1 truncate">Pokemon GO Mod</h3>
+                        <div class="flex items-center text-xs mb-1 text-yellow-500">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                            <span class="text-gray-500 ml-1">4.8</span>
+                        </div>
+                        <div class="text-gray-500 text-xs mb-2">
+                            <i class="fas fa-download mr-1"></i> 
+                            <span class="download-counter" data-count="31200000">31.2M</span>
+                        </div>
+                        <button class="btn-download mt-auto py-2 px-2 rounded-lg w-full text-xs"
+                            onclick="startDownload(this, 'Pokemon GO Mod APK','Spoofing, auto-walk, unlimited PokéCoins, and all Pokémon available. Catch them all easily.','#')">
+                            Download Now
+                        </button>
+                    </div>
+                </div>
             </div>
 
             <div id="no-results" class="text-center text-gray-500 text-lg mt-8 hidden">
@@ -602,6 +835,58 @@
             </section>
         </div>
     </main>
+
+    <!-- FAQ Section -->
+    <section id="faq-section" class="py-12 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-10">
+                <h2 class="text-2xl md:text-3xl font-extrabold text-gray-900 mb-3">Frequently Asked Questions</h2>
+                <p class="text-gray-500 max-w-2xl mx-auto">Find answers to common questions about our modded games</p>
+            </div>
+            
+            <div class="max-w-3xl mx-auto">
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3 class="text-lg font-semibold">Are these mods safe to use?</h3>
+                        <span class="faq-icon text-green-500"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p class="text-gray-600">Yes, all our mods are 100% safe and thoroughly tested before being made available. We ensure they are free from malware, viruses, and any harmful code. Our team verifies each mod for safety and functionality.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3 class="text-lg font-semibold">Will I get banned for using these mods?</h3>
+                        <span class="faq-icon text-green-500"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p class="text-gray-600">While we design our mods to be as undetectable as possible, there's always a small risk when using modded versions of online games. We recommend using alternate accounts for modded games and avoiding obvious cheating in competitive modes to minimize any potential risks.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3 class="text-lg font-semibold">How often are new mods added?</h3>
+                        <span class="faq-icon text-green-500"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p class="text-gray-600">We add new mods regularly, typically several times per week. Our team works constantly to provide the latest and most popular games with premium features unlocked. You can check back frequently or follow us on social media for updates on new releases.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3 class="text-lg font-semibold">Do these mods work on both Android and iOS?</h3>
+                        <span class="faq-icon text-green-500"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p class="text-gray-600">Currently, our mods are primarily designed for Android devices. iOS mods require different installation methods and are more limited due to Apple's restrictions. We're working on expanding our iOS offerings, but for now, most of our mods are Android-only.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     
     <section class="text-center py-4 border-t border-gray-100">
         <div class="flex items-center justify-center space-x-2">
@@ -958,6 +1243,24 @@
                 document.getElementById('all-mods-header').scrollIntoView({ behavior: 'smooth' });
             }
         });
+
+        // FAQ toggle functionality
+        function toggleFAQ(element) {
+            const faqItem = element.parentElement;
+            const answer = faqItem.querySelector('.faq-answer');
+            
+            // Close all other FAQs
+            document.querySelectorAll('.faq-item').forEach(item => {
+                if (item !== faqItem) {
+                    item.classList.remove('active');
+                    item.querySelector('.faq-answer').classList.remove('open');
+                }
+            });
+            
+            // Toggle current FAQ
+            faqItem.classList.toggle('active');
+            answer.classList.toggle('open');
+        }
 
         // Fake installation notifications - now using games from the website
         function showInstallNotification() {
