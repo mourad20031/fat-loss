@@ -300,25 +300,29 @@
       transform: rotate(180deg);
     }
     
-    /* Game card badges */
+    /* Modern Game card badges */
     .game-badge {
       position: absolute;
       top: 8px;
-      font-size: 0.6rem;
-      font-weight: 700;
-      padding: 3px 8px;
+      font-size: 0.55rem;
+      font-weight: 800;
+      padding: 3px 6px;
       border-radius: 4px;
       z-index: 10;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
     }
     .mod-badge {
       left: 8px;
       background: linear-gradient(135deg, #3b82f6, #1d4ed8);
       color: white;
+      box-shadow: 0 2px 4px rgba(59, 130, 246, 0.3);
     }
     .safe-badge {
       right: 8px;
-      background: linear-gradient(135deg, #22c55e, #16a34a);
-      color: white;
+      color: #22c55e;
+      font-weight: 700;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.1);
     }
   </style>
 </head>
@@ -335,7 +339,7 @@
                 <a href="#trending" class="text-gray-600 hover:text-green-500 transition text-sm font-medium">Trending</a>
                 <a href="#all-mods-header" class="text-gray-600 hover:text-green-500 transition text-sm font-medium">All Games</a>
                 <a href="#faq-section" class="text-gray-600 hover:text-green-500 transition text-sm font-medium">FAQ</a>
-                <a href="javascript:void(0);" onclick="openContactModal()" class="text-gray-600 hover:text-green-500 transition text-sm font-medium">Contact</a>
+                <a href="#contact-section" class="text-gray-600 hover:text-green-500 transition text-sm font-medium">Contact</a>
             </nav>
             <button id="menu-btn" class="md:hidden text-gray-700 text-xl">
                 <i class="fas fa-bars"></i>
@@ -345,7 +349,7 @@
             <a href="#trending" class="block text-gray-600 hover:text-green-500 transition py-2 text-sm font-medium">Trending</a>
             <a href="#all-mods-header" class="block text-gray-600 hover:text-green-500 transition py-2 text-sm font-medium">All Games</a>
             <a href="#faq-section" class="block text-gray-600 hover:text-green-500 transition py-2 text-sm font-medium">FAQ</a>
-            <a href="javascript:void(0);" onclick="openContactModal()" class="block text-gray-600 hover:text-green-500 transition py-2 text-sm font-medium">Contact</a>
+            <a href="#contact-section" class="block text-gray-600 hover:text-green-500 transition py-2 text-sm font-medium">Contact</a>
         </div>
     </header>
 
@@ -945,14 +949,6 @@
                     </span>
                 </button>
             </div>
-
-            <section id="contact-button-section" class="text-center py-8">
-                <h3 class="text-base font-bold text-gray-900 mb-2">Have Questions?</h3>
-                <p class="text-gray-500 text-xs mb-4">We're here to help. Contact our support team.</p>
-                <button onclick="openContactModal()" class="btn-download py-2 px-6 rounded-lg text-sm">
-                    Contact Us
-                </button>
-            </section>
         </div>
     </main>
 
@@ -1003,6 +999,38 @@
                     <div class="faq-answer">
                         <p class="text-gray-600">Currently, our mods are primarily designed for Android devices. iOS mods require different installation methods and are more limited due to Apple's restrictions. We're working on expanding our iOS offerings, but for now, most of our mods are Android-only.</p>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section (Moved after FAQ) -->
+    <section id="contact-section" class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-10">
+                <h2 class="text-2xl md:text-3xl font-extrabold text-gray-900 mb-3">Contact Us</h2>
+                <p class="text-gray-500 max-w-2xl mx-auto">Have questions or need support? We're here to help!</p>
+            </div>
+            
+            <div class="max-w-lg mx-auto">
+                <div class="bg-white rounded-lg shadow-sm border border-gray-100 p-6">
+                    <form id="contact-form">
+                        <div class="mb-4">
+                            <label for="fullName" class="block text-gray-700 mb-2 font-medium">Full Name</label>
+                            <input type="text" id="fullName" name="fullName" class="form-input w-full rounded-lg py-3 px-4 text-gray-800 focus:outline-none focus:ring-2 focus:ring-green-400" required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="email" class="block text-gray-700 mb-2 font-medium">Email</label>
+                            <input type="email" id="email" name="email" class="form-input w-full rounded-lg py-3 px-4 text-gray-800 focus:outline-none focus:ring-2 focus:ring-green-400" required>
+                        </div>
+                        <div class="mb-6">
+                            <label for="message" class="block text-gray-700 mb-2 font-medium">Message</label>
+                            <textarea id="message" name="message" rows="4" class="form-input w-full rounded-lg py-3 px-4 text-gray-800 focus:outline-none focus:ring-2 focus:ring-green-400" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-download block py-3 px-6 rounded-lg w-full text-base text-center font-semibold">
+                            Send Message
+                        </button>
+                    </form>
                 </div>
             </div>
         </div>
