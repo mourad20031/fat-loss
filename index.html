@@ -1,770 +1,346 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GameMods Pro - FREE Mobile Game Mods | Download Now</title>
-    <meta name="description" content="Download 20+ FREE mobile game mods for PUBG, Free Fire, CoD Mobile and more. 100% safe, instant download, no surveys.">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        /* Custom animations and styles */
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-        }
-        
-        @keyframes pulse-glow {
-            0%, 100% { box-shadow: 0 0 20px rgba(251, 191, 36, 0.5); }
-            50% { box-shadow: 0 0 40px rgba(251, 191, 36, 0.8); }
-        }
-        
-        .gradient-bg {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        }
-        
-        .gradient-text {
-            background: linear-gradient(to right, #fbbf24, #f59e0b);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        .card-hover {
-            transition: all 0.3s ease;
-        }
-        
-        .card-hover:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-        }
-        
-        .btn-primary {
-            background: linear-gradient(to right, #fbbf24, #f59e0b);
-            transition: all 0.3s ease;
-        }
-        
-        .btn-primary:hover {
-            transform: scale(1.05);
-            box-shadow: 0 10px 30px rgba(251, 191, 36, 0.4);
-        }
-        
-        .pattern-bg {
-            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-        }
-        
-        .scroll-smooth {
-            scroll-behavior: smooth;
-        }
-        
-        /* Mobile responsive grid */
-        @media (max-width: 768px) {
-            .grid-4x4 {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GameMods Pro – Mobile Mods Showcase</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      color-scheme: light;
+      --bg-gradient: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+      --accent-gradient: linear-gradient(135deg, #facc15 0%, #f97316 100%);
+      --surface: #ffffff;
+      --text-strong: #0f172a;
+      --text-muted: #475569;
+      --radius-lg: 18px;
+      --radius-md: 14px;
+      --shadow-lg: 0 24px 50px rgba(15, 23, 42, 0.15);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #f4f4f5;
+      color: var(--text-strong);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: clamp(48px, 8vw, 96px);
+      padding: clamp(20px, 5vw, 60px);
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .hero {
+      border-radius: var(--radius-lg);
+      padding: clamp(32px, 8vw, 72px);
+      position: relative;
+      overflow: hidden;
+      color: #fff;
+      background: var(--bg-gradient);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      opacity: 0.2;
+      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23FFFFFF' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      gap: clamp(24px, 5vw, 40px);
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.5rem, 6vw, 3.75rem);
+      line-height: 1.1;
+      margin: 0;
+    }
+
+    .hero p {
+      margin: 0;
+      color: rgba(255, 255, 255, 0.85);
+      font-size: clamp(1rem, 2.4vw, 1.2rem);
+      max-width: 630px;
+      justify-self: center;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: center;
+    }
+
+    .btn-primary {
+      background: var(--accent-gradient);
+      color: var(--text-strong);
+      font-weight: 700;
+      padding: 14px 26px;
+      border-radius: 999px;
+      border: 0;
+      cursor: pointer;
+      box-shadow: 0 18px 30px rgba(250, 204, 21, 0.3);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 22px 36px rgba(250, 204, 21, 0.4);
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.18);
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .grid-games {
+      display: grid;
+      gap: clamp(18px, 4vw, 24px);
+      background: #fff;
+      padding: clamp(20px, 5vw, 40px);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .grid-games h2 {
+      margin: 0;
+      font-size: clamp(1.8rem, 4.5vw, 2.6rem);
+      text-align: center;
+    }
+
+    .grid-games p {
+      margin: 12px auto 24px;
+      max-width: 620px;
+      text-align: center;
+      color: var(--text-muted);
+    }
+
+    .game-grid {
+      display: grid;
+      gap: clamp(16px, 4vw, 24px);
+    }
+
+    @media (min-width: 500px) {
+      .game-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    .game-card {
+      background: var(--surface);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid rgba(148, 163, 184, 0.2);
+      display: grid;
+      gap: 18px;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .game-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 36px rgba(15, 23, 42, 0.18);
+    }
+
+    .game-card-header {
+      background: var(--bg-gradient);
+      color: #fff;
+      padding: 28px 24px;
+      position: relative;
+    }
+
+    .game-card-badge {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      background: rgba(255, 255, 255, 0.16);
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-weight: 600;
+    }
+
+    .game-card-body {
+      padding: 0 24px 28px;
+      display: grid;
+      gap: 14px;
+    }
+
+    .meta {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .perks {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 6px;
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+
+    .perks li::before {
+      content: "⚡";
+      margin-right: 8px;
+      color: #f59e0b;
+    }
+
+    .btn-secondary {
+      border: 0;
+      border-radius: 999px;
+      padding: 12px 18px;
+      font-weight: 600;
+      background: rgba(99, 102, 241, 0.12);
+      color: #4338ca;
+      cursor: pointer;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(99, 102, 241, 0.2);
+      color: #312e81;
+    }
+
+    @media (max-width: 420px) {
+      .hero-actions {
+        flex-direction: column;
+      }
+      .meta {
+        flex-direction: column;
+        gap: 6px;
+        align-items: flex-start;
+      }
+    }
+  </style>
 </head>
-<body class="scroll-smooth">
-    <!-- Header -->
-    <header class="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-md shadow-sm transition-all duration-300">
-        <nav class="container mx-auto px-6 py-4">
-            <div class="flex items-center justify-between">
-                <div class="font-bold text-2xl gradient-text">GameMods Pro</div>
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="#home" class="text-gray-600 hover:text-purple-600 transition-colors">Home</a>
-                    <a href="#games" class="text-gray-600 hover:text-purple-600 transition-colors">Games</a>
-                    <a href="#features" class="text-gray-600 hover:text-purple-600 transition-colors">Features</a>
-                    <a href="#testimonials" class="text-gray-600 hover:text-purple-600 transition-colors">Reviews</a>
-                    <a href="#contact" class="text-gray-600 hover:text-purple-600 transition-colors">Contact</a>
-                </div>
-                <a href="#cta" class="hidden md:inline-flex items-center px-6 py-2 gradient-bg text-white rounded-lg font-semibold hover:opacity-90 transition-opacity">
-                    Download Now
-                </a>
-                <!-- Mobile menu button -->
-                <button class="md:hidden p-2" onclick="toggleMobileMenu()">
-                    <i class="fas fa-bars text-gray-900"></i>
-                </button>
-            </div>
-            <!-- Mobile menu -->
-            <div id="mobileMenu" class="hidden md:hidden mt-4 pb-4">
-                <a href="#home" class="block py-2 text-gray-600 hover:text-purple-600">Home</a>
-                <a href="#games" class="block py-2 text-gray-600 hover:text-purple-600">Games</a>
-                <a href="#features" class="block py-2 text-gray-600 hover:text-purple-600">Features</a>
-                <a href="#testimonials" class="block py-2 text-gray-600 hover:text-purple-600">Reviews</a>
-                <a href="#contact" class="block py-2 text-gray-600 hover:text-purple-600">Contact</a>
-                <a href="#cta" class="block w-full text-center px-6 py-2 gradient-bg text-white rounded-lg font-semibold mt-4">
-                    Download Now
-                </a>
-            </div>
-        </nav>
+<body>
+  <div class="wrapper">
+    <header class="hero">
+      <div class="hero-content">
+        <div class="badge">Premium Game Mods Platform</div>
+        <h1>Unlock Premium Mods for Your Favorite Mobile Games</h1>
+        <p>Download curated builds with unlimited resources, enhanced gameplay tweaks, and rock-solid anti-ban protection. Optimized for conversion and a flawless phone experience.</p>
+        <div class="hero-actions">
+          <button class="btn-primary">Download All Mods – FREE</button>
+          <div class="badge">100% Safe • No Surveys</div>
+        </div>
+      </div>
     </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="relative min-h-screen flex items-center justify-center px-6 py-20 overflow-hidden gradient-bg pattern-bg">
-        <div class="container mx-auto max-w-6xl text-center relative z-10">
-            <div class="space-y-8">
-                <div class="inline-flex items-center px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-white text-sm font-medium">
-                    <i class="fas fa-star mr-2 text-yellow-300"></i>
-                    Premium Game Mods Platform
-                </div>
+    <section class="grid-games" aria-labelledby="games-title">
+      <div>
+        <h2 id="games-title">Featured Mods (2 × 2 Layout)</h2>
+        <p>Pick the drop you want and get the latest zero-ban build instantly. Layout is tuned so phones always see two cards per line without sacrificing readability.</p>
+      </div>
 
-                <h1 class="text-4xl sm:text-5xl md:text-7xl font-bold text-white leading-tight">
-                    Unlock Premium
-                    <br />
-                    <span class="gradient-text">Game Mods</span>
-                </h1>
-
-                <p class="text-lg sm:text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed px-4">
-                    Access 20+ exclusive mobile game modifications with unlimited resources, 
-                    unlocked features, and enhanced gameplay. Safe, secure, and instant download.
-                </p>
-
-                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8">
-                    <button class="flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 btn-primary text-gray-900 rounded-lg font-bold text-sm sm:text-base">
-                        <i class="fas fa-download w-4 sm:w-5 h-4 sm:h-5 mr-2"></i>
-                        Download All Mods - FREE
-                    </button>
-
-                    <div class="px-6 py-3 bg-white/20 backdrop-blur-sm text-white rounded-lg font-semibold">
-                        100% FREE Downloads
-                    </div>
-                </div>
-
-                <div class="flex flex-col sm:flex-row justify-center items-center gap-8 pt-16">
-                    <div class="text-center">
-                        <div class="text-3xl font-bold text-white">500K+</div>
-                        <div class="text-sm text-white/80">Active Users</div>
-                    </div>
-                    <div class="text-center">
-                        <div class="text-3xl font-bold text-white">20+</div>
-                        <div class="text-sm text-white/80">Game Mods</div>
-                    </div>
-                    <div class="text-center">
-                        <div class="text-3xl font-bold text-white">99.9%</div>
-                        <div class="text-sm text-white/80">Safe Downloads</div>
-                    </div>
-                </div>
+      <div class="game-grid">
+        <article class="game-card">
+          <div class="game-card-header">
+            <h3>PUBG Mobile</h3>
+            <p>Battle Royale • Global</p>
+            <span class="game-card-badge">4.9 ★</span>
+          </div>
+          <div class="game-card-body">
+            <div class="meta">
+              <span>Downloads: 2M+</span>
+              <span>Safe & Verified</span>
             </div>
-        </div>
+            <ul class="perks">
+              <li>Aimbot + Smart ESP overlay</li>
+              <li>Unlimited UC & skins</li>
+              <li>Anti-ban v6.1 engine</li>
+            </ul>
+            <button class="btn-secondary">Get Smartlink</button>
+          </div>
+        </article>
+
+        <article class="game-card">
+          <div class="game-card-header">
+            <h3>Free Fire</h3>
+            <p>Battle Royale • LATAM/SEA</p>
+            <span class="game-card-badge">4.8 ★</span>
+          </div>
+          <div class="game-card-body">
+            <div class="meta">
+              <span>Downloads: 1.8M+</span>
+              <span>Safe & Verified</span>
+            </div>
+            <ul class="perks">
+              <li>Auto-headshot assist</li>
+              <li>Diamond vault unlocked</li>
+              <li>Ghost-mode ranked support</li>
+            </ul>
+            <button class="btn-secondary">Get Smartlink</button>
+          </div>
+        </article>
+
+        <article class="game-card">
+          <div class="game-card-header">
+            <h3>Call of Duty Mobile</h3>
+            <p>FPS • Global</p>
+            <span class="game-card-badge">4.9 ★</span>
+          </div>
+          <div class="game-card-body">
+            <div class="meta">
+              <span>Downloads: 1.5M+</span>
+              <span>Safe & Verified</span>
+            </div>
+            <ul class="perks">
+              <li>Perfect aim + recoil lock</li>
+              <li>Radar hack with minimap overlay</li>
+              <li>Unlimited CP tokens</li>
+            </ul>
+            <button class="btn-secondary">Get Smartlink</button>
+          </div>
+        </article>
+
+        <article class="game-card">
+          <div class="game-card-header">
+            <h3>Mobile Legends</h3>
+            <p>MOBA • Global</p>
+            <span class="game-card-badge">4.7 ★</span>
+          </div>
+          <div class="game-card-body">
+            <div class="meta">
+              <span>Downloads: 1.2M+</span>
+              <span>Safe & Verified</span>
+            </div>
+            <ul class="perks">
+              <li>Auto-win macro executor</li>
+              <li>Map hack + hero unlocker</li>
+              <li>Unlimited diamonds & skins</li>
+            </ul>
+            <button class="btn-secondary">Get Smartlink</button>
+          </div>
+        </article>
+      </div>
     </section>
-
-    <!-- Features Section -->
-    <section id="features" class="py-20 px-6 bg-zinc-50">
-        <div class="container mx-auto max-w-6xl">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold text-zinc-900 mb-6">Why Choose Our Game Mods</h2>
-                <p class="text-xl text-zinc-700 max-w-2xl mx-auto">
-                    Experience gaming like never before with our premium modifications and exclusive features.
-                </p>
-            </div>
-
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                <div class="group bg-white p-6 rounded-lg border border-zinc-200 text-center hover:shadow-xl hover:scale-105 transition-all duration-300">
-                    <div class="w-16 h-16 gradient-bg text-white rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-                        <i class="fas fa-crown text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-zinc-900 mb-4">Premium Features</h3>
-                    <p class="text-zinc-700 leading-relaxed">Unlock all paid features, skins, and exclusive content for free.</p>
-                </div>
-
-                <div class="group bg-white p-6 rounded-lg border border-zinc-200 text-center hover:shadow-xl hover:scale-105 transition-all duration-300">
-                    <div class="w-16 h-16 gradient-bg text-white rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-                        <i class="fas fa-bolt text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-zinc-900 mb-4">Unlimited Resources</h3>
-                    <p class="text-zinc-700 leading-relaxed">Get unlimited coins, gems, energy, and in-game currency instantly.</p>
-                </div>
-
-                <div class="group bg-white p-6 rounded-lg border border-zinc-200 text-center hover:shadow-xl hover:scale-105 transition-all duration-300">
-                    <div class="w-16 h-16 gradient-bg text-white rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-                        <i class="fas fa-shield-alt text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-zinc-900 mb-4">100% Safe & Secure</h3>
-                    <p class="text-zinc-700 leading-relaxed">All mods are virus-scanned and tested for complete safety.</p>
-                </div>
-
-                <div class="group bg-white p-6 rounded-lg border border-zinc-200 text-center hover:shadow-xl hover:scale-105 transition-all duration-300">
-                    <div class="w-16 h-16 gradient-bg text-white rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-                        <i class="fas fa-download text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-zinc-900 mb-4">Instant Download</h3>
-                    <p class="text-zinc-700 leading-relaxed">No waiting, no surveys - direct download with one click.</p>
-                </div>
-
-                <div class="group bg-white p-6 rounded-lg border border-zinc-200 text-center hover:shadow-xl hover:scale-105 transition-all duration-300">
-                    <div class="w-16 h-16 gradient-bg text-white rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-                        <i class="fas fa-star text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-zinc-900 mb-4">Exclusive Mods</h3>
-                    <p class="text-zinc-700 leading-relaxed">Access unique modifications not available anywhere else.</p>
-                </div>
-
-                <div class="group bg-white p-6 rounded-lg border border-zinc-200 text-center hover:shadow-xl hover:scale-105 transition-all duration-300">
-                    <div class="w-16 h-16 gradient-bg text-white rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-                        <i class="fas fa-lock text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-zinc-900 mb-4">Anti-Ban Protection</h3>
-                    <p class="text-zinc-700 leading-relaxed">Built-in protection to keep your account safe from bans.</p>
-                </div>
-
-                <div class="group bg-white p-6 rounded-lg border border-zinc-200 text-center hover:shadow-xl hover:scale-105 transition-all duration-300">
-                    <div class="w-16 h-16 gradient-bg text-white rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-                        <i class="fas fa-users text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-zinc-900 mb-4">24/7 Support</h3>
-                    <p class="text-zinc-700 leading-relaxed">Round-the-clock customer support for any issues.</p>
-                </div>
-
-                <div class="group bg-white p-6 rounded-lg border border-zinc-200 text-center hover:shadow-xl hover:scale-105 transition-all duration-300">
-                    <div class="w-16 h-16 gradient-bg text-white rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-                        <i class="fas fa-globe text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-zinc-900 mb-4">Global Access</h3>
-                    <p class="text-zinc-700 leading-relaxed">Works worldwide on all devices and regions.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Games Showcase -->
-    <section id="games" class="py-20 px-6 bg-zinc-50">
-        <div class="container mx-auto max-w-7xl">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold text-zinc-900 mb-6">20+ Premium Game Mods</h2>
-                <p class="text-xl text-zinc-700 max-w-2xl mx-auto">
-                    Choose from our extensive collection of game modifications. All mods are tested, safe, and updated regularly.
-                </p>
-            </div>
-
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
-                <!-- Game cards -->
-                <div class="group bg-white rounded-lg border border-zinc-200 overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer">
-                    <div class="relative h-36 sm:h-48 overflow-hidden gradient-bg">
-                        <div class="absolute inset-0 bg-black/20" />
-                        <div class="absolute inset-0 flex items-center justify-center px-2">
-                            <div class="text-white text-center">
-                                <div class="text-lg sm:text-2xl font-bold mb-1 sm:mb-2">PUBG Mobile</div>
-                                <div class="text-xs sm:text-sm opacity-90">Battle Royale</div>
-                            </div>
-                        </div>
-                        <div class="absolute top-2 sm:top-3 right-2 sm:right-3 bg-yellow-400 text-gray-900 px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-full text-xs font-bold">
-                            <i class="fas fa-star w-3 h-3 mr-1"></i>4.9
-                        </div>
-                    </div>
-                    <div class="p-3 sm:p-4">
-                        <div class="flex items-center justify-between mb-2 sm:mb-3">
-                            <div class="text-xs text-zinc-500">
-                                <i class="fas fa-download w-3 h-3 inline mr-1"></i>2M+
-                            </div>
-                            <div class="flex items-center text-xs text-green-600">
-                                <i class="fas fa-shield-alt w-3 h-3 mr-1"></i>Safe
-                            </div>
-                        </div>
-                        <div class="space-y-1.5 sm:space-y-2 mb-3 sm:mb-4">
-                            <div class="flex items-center text-xs text-zinc-700">
-                                <i class="fas fa-bolt w-3 h-3 mr-2 text-purple-600"></i>
-                                <span>Aimbot, Wallhack, Unlimited UC</span>
-                            </div>
-                        </div>
-                        <button class="w-full gradient-bg text-white py-2 sm:py-2.5 rounded-lg font-semibold text-xs sm:text-sm hover:opacity-90 transition-opacity">
-                            Download Now
-                        </button>
-                    </div>
-                </div>
-
-                <div class="group bg-white rounded-lg border border-zinc-200 overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer">
-                    <div class="relative h-36 sm:h-48 overflow-hidden gradient-bg">
-                        <div class="absolute inset-0 bg-black/20" />
-                        <div class="absolute inset-0 flex items-center justify-center px-2">
-                            <div class="text-white text-center">
-                                <div class="text-lg sm:text-2xl font-bold mb-1 sm:mb-2">Free Fire</div>
-                                <div class="text-xs sm:text-sm opacity-90">Battle Royale</div>
-                            </div>
-                        </div>
-                        <div class="absolute top-2 sm:top-3 right-2 sm:right-3 bg-yellow-400 text-gray-900 px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-full text-xs font-bold">
-                            <i class="fas fa-star w-3 h-3 mr-1"></i>4.8
-                        </div>
-                    </div>
-                    <div class="p-3 sm:p-4">
-                        <div class="flex items-center justify-between mb-2 sm:mb-3">
-                            <div class="text-xs text-zinc-500">
-                                <i class="fas fa-download w-3 h-3 inline mr-1"></i>1.8M+
-                            </div>
-                            <div class="flex items-center text-xs text-green-600">
-                                <i class="fas fa-shield-alt w-3 h-3 mr-1"></i>Safe
-                            </div>
-                        </div>
-                        <div class="space-y-1.5 sm:space-y-2 mb-3 sm:mb-4">
-                            <div class="flex items-center text-xs text-zinc-700">
-                                <i class="fas fa-bolt w-3 h-3 mr-2 text-purple-600"></i>
-                                <span>Auto Headshot, ESP, Free Diamonds</span>
-                            </div>
-                        </div>
-                        <button class="w-full gradient-bg text-white py-2 sm:py-2.5 rounded-lg font-semibold text-xs sm:text-sm hover:opacity-90 transition-opacity">
-                            Download Now
-                        </button>
-                    </div>
-                </div>
-
-                <div class="group bg-white rounded-lg border border-zinc-200 overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer">
-                    <div class="relative h-36 sm:h-48 overflow-hidden gradient-bg">
-                        <div class="absolute inset-0 bg-black/20" />
-                        <div class="absolute inset-0 flex items-center justify-center px-2">
-                            <div class="text-white text-center">
-                                <div class="text-lg sm:text-2xl font-bold mb-1 sm:mb-2">Call of Duty Mobile</div>
-                                <div class="text-xs sm:text-sm opacity-90">FPS</div>
-                            </div>
-                        </div>
-                        <div class="absolute top-2 sm:top-3 right-2 sm:right-3 bg-yellow-400 text-gray-900 px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-full text-xs font-bold">
-                            <i class="fas fa-star w-3 h-3 mr-1"></i>4.9
-                        </div>
-                    </div>
-                    <div class="p-3 sm:p-4">
-                        <div class="flex items-center justify-between mb-2 sm:mb-3">
-                            <div class="text-xs text-zinc-500">
-                                <i class="fas fa-download w-3 h-3 inline mr-1"></i>1.5M+
-                            </div>
-                            <div class="flex items-center text-xs text-green-600">
-                                <i class="fas fa-shield-alt w-3 h-3 mr-1"></i>Safe
-                            </div>
-                        </div>
-                        <div class="space-y-1.5 sm:space-y-2 mb-3 sm:mb-4">
-                            <div class="flex items-center text-xs text-zinc-700">
-                                <i class="fas fa-bolt w-3 h-3 mr-2 text-purple-600"></i>
-                                <span>Perfect Aim, Radar Hack, Max CP</span>
-                            </div>
-                        </div>
-                        <button class="w-full gradient-bg text-white py-2 sm:py-2.5 rounded-lg font-semibold text-xs sm:text-sm hover:opacity-90 transition-opacity">
-                            Download Now
-                        </button>
-                    </div>
-                </div>
-
-                <div class="group bg-white rounded-lg border border-zinc-200 overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer">
-                    <div class="relative h-36 sm:h-48 overflow-hidden gradient-bg">
-                        <div class="absolute inset-0 bg-black/20" />
-                        <div class="absolute inset-0 flex items-center justify-center px-2">
-                            <div class="text-white text-center">
-                                <div class="text-lg sm:text-2xl font-bold mb-1 sm:mb-2">Mobile Legends</div>
-                                <div class="text-xs sm:text-sm opacity-90">MOBA</div>
-                            </div>
-                        </div>
-                        <div class="absolute top-2 sm:top-3 right-2 sm:right-3 bg-yellow-400 text-gray-900 px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-full text-xs font-bold">
-                            <i class="fas fa-star w-3 h-3 mr-1"></i>4.7
-                        </div>
-                    </div>
-                    <div class="p-3 sm:p-4">
-                        <div class="flex items-center justify-between mb-2 sm:mb-3">
-                            <div class="text-xs text-zinc-500">
-                                <i class="fas fa-download w-3 h-3 inline mr-1"></i>1.2M+
-                            </div>
-                            <div class="flex items-center text-xs text-green-600">
-                                <i class="fas fa-shield-alt w-3 h-3 mr-1"></i>Safe
-                            </div>
-                        </div>
-                        <div class="space-y-1.5 sm:space-y-2 mb-3 sm:mb-4">
-                            <div class="flex items-center text-xs text-zinc-700">
-                                <i class="fas fa-bolt w-3 h-3 mr-2 text-purple-600"></i>
-                                <span>Auto Win, Map Hack, Unlimited Diamonds</span>
-                            </div>
-                        </div>
-                        <button class="w-full gradient-bg text-white py-2 sm:py-2.5 rounded-lg font-semibold text-xs sm:text-sm hover:opacity-90 transition-opacity">
-                            Download Now
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Add more game cards as needed... -->
-            </div>
-
-            <div class="text-center mt-12">
-                <button class="px-8 py-3 border-2 border-purple-600 text-purple-600 rounded-lg font-semibold hover:bg-purple-600 hover:text-white transition-all duration-200">
-                    Load More Games
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="py-20 px-6 bg-white">
-        <div class="container mx-auto max-w-6xl">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold text-zinc-900 mb-6">What Gamers Are Saying</h2>
-            </div>
-
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                <div class="bg-zinc-50 border border-zinc-200 rounded-lg p-6 hover:shadow-lg transition-all duration-300">
-                    <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 gradient-bg text-white rounded-full flex items-center justify-center font-semibold text-sm">
-                            AT
-                        </div>
-                        <div class="ml-3">
-                            <div class="font-semibold text-zinc-900 text-sm">Alex Thompson</div>
-                            <div class="text-zinc-600 text-xs">PUBG Mobile Player</div>
-                            <div class="text-zinc-400 text-xs">Level 150</div>
-                        </div>
-                    </div>
-                    <blockquote class="text-zinc-800 text-sm leading-relaxed">
-                        "The mods are incredible! I've been using them for 6 months with zero issues."
-                    </blockquote>
-                </div>
-
-                <div class="bg-zinc-50 border border-zinc-200 rounded-lg p-6 hover:shadow-lg transition-all duration-300">
-                    <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 gradient-bg text-white rounded-full flex items-center justify-center font-semibold text-sm">
-                            JM
-                        </div>
-                        <div class="ml-3">
-                            <div class="font-semibold text-zinc-900 text-sm">Jessica Martinez</div>
-                            <div class="text-zinc-600 text-xs">Free Fire Enthusiast</div>
-                            <div class="text-zinc-400 text-xs">2M+ Downloads</div>
-                        </div>
-                    </div>
-                    <blockquote class="text-zinc-800 text-sm leading-relaxed">
-                        "Best mod site I've ever used! Unlimited diamonds and no bans."
-                    </blockquote>
-                </div>
-
-                <div class="bg-zinc-50 border border-zinc-200 rounded-lg p-6 hover:shadow-lg transition-all duration-300">
-                    <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 gradient-bg text-white rounded-full flex items-center justify-center font-semibold text-sm">
-                            RC
-                        </div>
-                        <div class="ml-3">
-                            <div class="font-semibold text-zinc-900 text-sm">Ryan Chen</div>
-                            <div class="text-zinc-600 text-xs">Mobile Legends Pro</div>
-                            <div class="text-zinc-400 text-xs">Mythic Glory</div>
-                        </div>
-                    </div>
-                    <blockquote class="text-zinc-800 text-sm leading-relaxed">
-                        "These mods changed my gaming experience completely. All features work perfectly."
-                    </blockquote>
-                </div>
-
-                <div class="bg-zinc-50 border border-zinc-200 rounded-lg p-6 hover:shadow-lg transition-all duration-300">
-                    <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 gradient-bg text-white rounded-full flex items-center justify-center font-semibold text-sm">
-                            SW
-                        </div>
-                        <div class="ml-3">
-                            <div class="font-semibold text-zinc-900 text-sm">Sophia Wilson</div>
-                            <div class="text-zinc-600 text-xs">Clash of Clans Player</div>
-                            <div class="text-zinc-400 text-xs">Max TH15</div>
-                        </div>
-                    </div>
-                    <blockquote class="text-zinc-800 text-sm leading-relaxed">
-                        "Unlimited gems and instant building! 100% safe and reliable!"
-                    </blockquote>
-                </div>
-
-                <!-- Add more testimonials as needed... -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 px-6 bg-zinc-50">
-        <div class="container mx-auto max-w-6xl">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold text-zinc-900 mb-6">Get in Touch</h2>
-                <p class="text-xl text-zinc-700 max-w-2xl mx-auto">
-                    Need custom mods or have questions? We're here to help you level up your gaming experience.
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-                <div>
-                    <h3 class="text-2xl font-bold text-zinc-900 mb-6">Why Contact Us?</h3>
-                    <p class="text-zinc-700 mb-6">
-                        Whether you need custom mods, have technical issues, or want to request specific features, our team is ready to help.
-                    </p>
-
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <div class="bg-white p-6 rounded-lg border border-zinc-200 hover:shadow-lg transition-all duration-300">
-                            <div class="w-12 h-12 gradient-bg text-white rounded-lg flex items-center justify-center mb-4">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <h4 class="font-semibold text-zinc-900 mb-2">Email Support</h4>
-                            <p class="text-sm text-zinc-700 mb-2">Get help via email within 24 hours</p>
-                            <p class="text-sm font-medium text-purple-600">support@gamemodspro.com</p>
-                        </div>
-
-                        <div class="bg-white p-6 rounded-lg border border-zinc-200 hover:shadow-lg transition-all duration-300">
-                            <div class="w-12 h-12 gradient-bg text-white rounded-lg flex items-center justify-center mb-4">
-                                <i class="fas fa-comments"></i>
-                            </div>
-                            <h4 class="font-semibold text-zinc-900 mb-2">Live Chat</h4>
-                            <p class="text-sm text-zinc-700 mb-2">Chat with our support team</p>
-                            <p class="text-sm font-medium text-purple-600">Available 9 AM - 9 PM EST</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-lg p-8 shadow-sm border border-zinc-200">
-                    <h3 class="text-2xl font-bold text-zinc-900 mb-6 text-center">
-                        Send Us a Message
-                    </h3>
-                    <form class="space-y-6">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div>
-                                <label class="block text-sm font-medium text-zinc-700 mb-2">
-                                    Your Name *
-                                </label>
-                                <input
-                                    type="text"
-                                    class="w-full px-4 py-3 border border-zinc-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
-                                    placeholder="Enter your name"
-                                    required
-                                />
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium text-zinc-700 mb-2">
-                                    Email Address *
-                                </label>
-                                <input
-                                    type="email"
-                                    class="w-full px-4 py-3 border border-zinc-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
-                                    placeholder="your@email.com"
-                                    required
-                                />
-                            </div>
-                        </div>
-
-                        <div>
-                            <label class="block text-sm font-medium text-zinc-700 mb-2">
-                                Game You Need Mods For *
-                            </label>
-                            <select
-                                class="w-full px-4 py-3 border border-zinc-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
-                                required
-                            >
-                                <option value="">Select a game...</option>
-                                <option value="pubg">PUBG Mobile</option>
-                                <option value="freefire">Free Fire</option>
-                                <option value="cod">Call of Duty Mobile</option>
-                                <option value="ml">Mobile Legends</option>
-                                <option value="coc">Clash of Clans</option>
-                                <option value="other">Other</option>
-                            </select>
-                        </div>
-
-                        <div>
-                            <label class="block text-sm font-medium text-zinc-700 mb-2">
-                                Your Message *
-                            </label>
-                            <textarea
-                                rows="5"
-                                class="w-full px-4 py-3 border border-zinc-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent resize-none"
-                                placeholder="Tell us what mods you need or any questions you have..."
-                                required
-                            ></textarea>
-                        </div>
-
-                        <button
-                            type="submit"
-                            class="w-full btn-primary text-gray-900 py-4 px-6 rounded-lg font-bold hover:opacity-90 transition-opacity"
-                        >
-                            <i class="fas fa-paper-plane w-5 h-5 mr-2"></i>
-                            Send Message
-                        </button>
-
-                        <p class="text-xs text-zinc-500 text-center">
-                            We respect your privacy. Your information will never be shared with third parties.
-                        </p>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section id="cta" class="py-20 px-6 gradient-bg relative overflow-hidden">
-        <div class="absolute inset-0 opacity-10 pattern-bg"></div>
-
-        <div class="container mx-auto max-w-6xl relative z-10">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-6xl font-bold text-white mb-6">
-                    Start Your Gaming Journey Today!
-                </h2>
-                <p class="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto mb-12">
-                    Join 500,000+ gamers already using our premium mods. Download instantly and dominate every game!
-                </p>
-
-                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
-                    <button class="flex items-center justify-center px-8 py-4 btn-primary text-gray-900 rounded-lg font-bold text-lg shadow-xl">
-                        <i class="fas fa-download w-6 h-6 mr-2"></i>
-                        Download All Mods FREE
-                    </button>
-                </div>
-
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-                    <div>
-                        <h3 class="text-2xl font-bold text-white mb-6">Why Choose Us?</h3>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4 text-center hover:bg-white/20 transition-all duration-300">
-                                <div class="w-10 h-10 btn-primary text-gray-900 rounded-lg flex items-center justify-center mx-auto mb-3">
-                                    <i class="fas fa-shield-alt"></i>
-                                </div>
-                                <h4 class="text-white font-semibold mb-1 text-sm">100% Virus Free</h4>
-                                <p class="text-white/80 text-xs">All mods are scanned and safe</p>
-                            </div>
-
-                            <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4 text-center hover:bg-white/20 transition-all duration-300">
-                                <div class="w-10 h-10 btn-primary text-gray-900 rounded-lg flex items-center justify-center mx-auto mb-3">
-                                    <i class="fas fa-users"></i>
-                                </div>
-                                <h4 class="text-white font-semibold mb-1 text-sm">500K+ Happy Users</h4>
-                                <p class="text-white/80 text-xs">Trusted by gamers worldwide</p>
-                            </div>
-
-                            <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4 text-center hover:bg-white/20 transition-all duration-300">
-                                <div class="w-10 h-10 btn-primary text-gray-900 rounded-lg flex items-center justify-center mx-auto mb-3">
-                                    <i class="fas fa-star"></i>
-                                </div>
-                                <h4 class="text-white font-semibold mb-1 text-sm">4.9/5 Rating</h4>
-                                <p class="text-white/80 text-xs">Excellent user reviews</p>
-                            </div>
-
-                            <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4 text-center hover:bg-white/20 transition-all duration-300">
-                                <div class="w-10 h-10 btn-primary text-gray-900 rounded-lg flex items-center justify-center mx-auto mb-3">
-                                    <i class="fas fa-clock"></i>
-                                </div>
-                                <h4 class="text-white font-semibold mb-1 text-sm">24/7 Support</h4>
-                                <p class="text-white/80 text-xs">Always here to help you</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6">
-                        <h3 class="text-2xl font-bold text-white mb-2 text-center">
-                            Need Custom Mods?
-                        </h3>
-                        <p class="text-white/80 text-center mb-6">
-                            Contact us for special requests or if you need help with any mods
-                        </p>
-                        <a href="#contact" class="block w-full btn-primary text-gray-900 py-3 px-6 rounded-lg font-bold text-center hover:opacity-90 transition-opacity">
-                            Contact Support
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="gradient-to-br from-zinc-900 to-zinc-800 text-white py-16 px-6">
-        <div class="container mx-auto max-w-6xl">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-                <div class="text-center md:text-left">
-                    <div class="font-bold text-2xl mb-4 gradient-text">GameMods Pro</div>
-                    <p class="text-zinc-300 text-sm mb-4">
-                        Your trusted source for premium game modifications. Safe, secure, and updated regularly.
-                    </p>
-                    <div class="text-zinc-400 text-sm">
-                        © 2025 GameMods Pro. All rights reserved.
-                    </div>
-                </div>
-
-                <div class="text-center">
-                    <h3 class="font-semibold text-lg mb-4">Quick Links</h3>
-                    <div class="space-y-2">
-                        <a href="#privacy" class="block text-zinc-300 hover:text-white transition-colors text-sm">Privacy Policy</a>
-                        <a href="#terms" class="block text-zinc-300 hover:text-white transition-colors text-sm">Terms of Service</a>
-                        <a href="#support" class="block text-zinc-300 hover:text-white transition-colors text-sm">Support</a>
-                        <a href="#faq" class="block text-zinc-300 hover:text-white transition-colors text-sm">FAQ</a>
-                    </div>
-                </div>
-
-                <div class="text-center md:text-right">
-                    <h3 class="font-semibold text-lg mb-4">Support</h3>
-                    <p class="text-zinc-300 text-sm mb-2">24/7 Customer Support</p>
-                    <p class="text-zinc-300 text-sm mb-4">support@gamemodspro.com</p>
-                    <div class="flex justify-center md:justify-end gap-2">
-                        <div class="px-3 py-1 bg-green-500/20 text-green-400 rounded-full text-xs font-medium">
-                            100% Safe
-                        </div>
-                        <div class="px-3 py-1 bg-blue-500/20 text-blue-400 rounded-full text-xs font-medium">
-                            Virus Free
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="pt-8 border-t border-zinc-600/50 text-center">
-                <p class="text-zinc-400 text-sm">
-                    Disclaimer: All game modifications are for educational purposes only. Use at your own risk.
-                </p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- JavaScript -->
-    <script>
-        // Mobile menu toggle
-        function toggleMobileMenu() {
-            const menu = document.getElementById('mobileMenu');
-            menu.classList.toggle('hidden');
-        }
-
-        // Smooth scroll for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-                // Close mobile menu if open
-                document.getElementById('mobileMenu').classList.add('hidden');
-            });
-        });
-
-        // Form submission
-        document.querySelector('form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form data
-            const formData = new FormData(this);
-            const data = Object.fromEntries(formData);
-            
-            // Show success message
-            this.innerHTML = `
-                <div class="text-center py-12">
-                    <div class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-check text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-zinc-900 mb-2">Message Sent Successfully!</h3>
-                    <p class="text-zinc-700">We'll get back to you within 24 hours.</p>
-                </div>
-            `;
-        });
-
-        // Add scroll animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        // Observe all sections
-        document.querySelectorAll('section').forEach(section => {
-            section.style.opacity = '0';
-            section.style.transform = 'translateY(20px)';
-            section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(section);
-        });
-    </script>
+  </div>
 </body>
-</html><...
+</html>
