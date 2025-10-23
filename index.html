@@ -133,110 +133,6 @@
       transform: translateY(-2px);
     }
 
-    /* Back Home Button */
-    .btn-back-home {
-      background: linear-gradient(135deg, #3b82f6, #1d4ed8);
-      color: white;
-      font-weight: 500;
-      transition: all 0.3s ease;
-      box-shadow: 0 2px 8px rgba(59, 130, 246, 0.2);
-      border: none;
-      border-radius: 50px;
-      padding: 8px 16px;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 0.875rem;
-    }
-    .btn-back-home:hover {
-      background: linear-gradient(135deg, #1d4ed8, #3b82f6);
-      box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
-      transform: translateY(-2px);
-    }
-
-    /* Confirm Button */
-    .btn-confirm {
-      background: linear-gradient(135deg, #22c55e, #16a34a);
-      color: white;
-      font-weight: 600;
-      letter-spacing: 0.5px;
-      transition: all 0.3s ease;
-      box-shadow: 0 2px 8px rgba(34, 197, 94, 0.2);
-      position: relative;
-      overflow: hidden;
-    }
-    .btn-confirm:hover {
-      background: linear-gradient(135deg, #16a34a, #22c55e);
-      box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3);
-      transform: translateY(-2px);
-    }
-    .btn-confirm:active {
-      transform: translateY(0);
-    }
-
-    /* Loading animation */
-    .loading-dots {
-      display: inline-block;
-      position: relative;
-      width: 60px;
-      height: 60px;
-    }
-    .loading-dots div {
-      position: absolute;
-      top: 24px;
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: #22c55e;
-      animation-timing-function: cubic-bezier(0, 1, 1, 0);
-    }
-    .loading-dots div:nth-child(1) {
-      left: 6px;
-      animation: loading-dots1 0.6s infinite;
-    }
-    .loading-dots div:nth-child(2) {
-      left: 6px;
-      animation: loading-dots2 0.6s infinite;
-    }
-    .loading-dots div:nth-child(3) {
-      left: 26px;
-      animation: loading-dots2 0.6s infinite;
-    }
-    .loading-dots div:nth-child(4) {
-      left: 45px;
-      animation: loading-dots3 0.6s infinite;
-    }
-    @keyframes loading-dots1 {
-      0% { transform: scale(0); }
-      100% { transform: scale(1); }
-    }
-    @keyframes loading-dots3 {
-      0% { transform: scale(1); }
-      100% { transform: scale(0); }
-    }
-    @keyframes loading-dots2 {
-      0% { transform: translate(0, 0); }
-      100% { transform: translate(19px, 0); }
-    }
-
-    /* Hide scrollbar */
-    .no-scrollbar::-webkit-scrollbar {
-      display: none;
-    }
-    .no-scrollbar {
-      -ms-overflow-style: none;
-      scrollbar-width: none;
-    }
-
-    /* Download counter animation */
-    .download-counter {
-      transition: all 0.5s ease;
-    }
-    .download-counter.updating {
-      color: #22c55e;
-      transform: scale(1.1);
-    }
-    
     /* Safety badge */
     .safety-badge {
       display: inline-flex;
@@ -282,6 +178,17 @@
       color: white;
       font-weight: 600;
       font-size: 0.875rem;
+    }
+    
+    /* Modern compact layout */
+    .compact-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    @media (min-width: 768px) {
+      .compact-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
   </style>
 </head>
@@ -330,10 +237,6 @@
                         <input type="text" id="mainSearchInput" placeholder="Search for games..." class="search-bar text-gray-800 rounded-full py-2 pl-4 pr-10 focus:outline-none focus:ring-2 focus:ring-green-400 w-full text-sm">
                         <i class="fas fa-search text-gray-400 absolute right-3 top-1/2 -translate-y-1/2 text-sm"></i>
                     </div>
-                    <button id="back-home-btn" class="btn-back-home hidden">
-                        <i class="fas fa-home"></i>
-                        <span>Back Home</span>
-                    </button>
                 </div>
             </div>
         </section>
@@ -443,8 +346,8 @@
                 <p class="text-xs text-gray-500 max-w-2xl mx-auto">Premium modded games with unlimited features</p>
             </div>
 
-            <div id="games-grid" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3">
-                
+            <div id="games-grid" class="compact-grid grid gap-3">
+                <!-- Only 4 games initially visible -->
                 <div class="game-card rounded-lg overflow-hidden flex flex-col" data-name="Clash of Clans Mod APK">
                     <div class="coming-soon-image">Coming Soon</div>
                     <div class="p-3 flex flex-col flex-grow">
@@ -493,7 +396,6 @@
                     </div>
                 </div>
 
-                <!-- RESTORED GAMES -->
                 <div class="game-card rounded-lg overflow-hidden flex flex-col" data-name="Hitman: Absolution Mod">
                     <div class="coming-soon-image">Coming Soon</div>
                     <div class="p-3 flex flex-col flex-grow">
@@ -514,7 +416,8 @@
                     </div>
                 </div>
 
-                <div class="game-card rounded-lg overflow-hidden flex flex-col" data-name="WWE 2K25: Netflix Ed. Mod">
+                <!-- Hidden games -->
+                <div class="game-card rounded-lg overflow-hidden flex flex-col hidden" data-name="WWE 2K25: Netflix Ed. Mod">
                     <div class="coming-soon-image">Coming Soon</div>
                     <div class="p-3 flex flex-col flex-grow">
                         <h3 class="text-xs font-bold text-gray-900 mb-1 truncate">WWE 2K25: Netflix Ed.</h3>
@@ -534,7 +437,7 @@
                     </div>
                 </div>
 
-                <div class="game-card rounded-lg overflow-hidden flex flex-col" data-name="Balatro Mod">
+                <div class="game-card rounded-lg overflow-hidden flex flex-col hidden" data-name="Balatro Mod">
                     <div class="coming-soon-image">Coming Soon</div>
                     <div class="p-3 flex flex-col flex-grow">
                         <h3 class="text-xs font-bold text-gray-900 mb-1 truncate">Balatro Mod</h3>
@@ -554,7 +457,7 @@
                     </div>
                 </div>
 
-                <div class="game-card rounded-lg overflow-hidden flex flex-col" data-name="Royal Match Mod">
+                <div class="game-card rounded-lg overflow-hidden flex flex-col hidden" data-name="Royal Match Mod">
                     <div class="coming-soon-image">Coming Soon</div>
                     <div class="p-3 flex flex-col flex-grow">
                         <h3 class="text-xs font-bold text-gray-900 mb-1 truncate">Royal Match Mod</h3>
@@ -574,7 +477,7 @@
                     </div>
                 </div>
 
-                <div class="game-card rounded-lg overflow-hidden flex flex-col" data-name="Slay the Spire Mod">
+                <div class="game-card rounded-lg overflow-hidden flex flex-col hidden" data-name="Slay the Spire Mod">
                     <div class="coming-soon-image">Coming Soon</div>
                     <div class="p-3 flex flex-col flex-grow">
                         <h3 class="text-xs font-bold text-gray-900 mb-1 truncate">Slay the Spire Mod</h3>
@@ -594,108 +497,7 @@
                     </div>
                 </div>
 
-                <div class="game-card rounded-lg overflow-hidden flex flex-col" data-name="Stardew Valley Mod">
-                    <div class="coming-soon-image">Coming Soon</div>
-                    <div class="p-3 flex flex-col flex-grow">
-                        <h3 class="text-xs font-bold text-gray-900 mb-1 truncate">Stardew Valley Mod</h3>
-                        <div class="flex items-center text-xs mb-2 text-yellow-500">
-                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i><i class="fas fa-star"></i>
-                            <span class="text-gray-500 ml-1">5.0</span>
-                        </div>
-                        <div class="text-gray-500 text-xs mb-2">
-                            <i class="fas fa-download mr-1"></i> 
-                            <span class="download-counter" data-count="11800000">11.8M</span>
-                        </div>
-                        <button class="btn-download mt-auto py-1 px-3 rounded-lg w-full text-xs"
-                            onclick="startDownload(this, 'Stardew Valley Mod APK','Unlimited money, instant crop growth, and all items unlocked. Build your dream farm without any limitations.','#')">
-                            Download Now
-                        </button>
-                    </div>
-                </div>
-
-                <div class="game-card rounded-lg overflow-hidden flex flex-col" data-name="Dead Cells Mod">
-                    <div class="coming-soon-image">Coming Soon</div>
-                    <div class="p-3 flex flex-col flex-grow">
-                        <h3 class="text-xs font-bold text-gray-900 mb-1 truncate">Dead Cells Mod</h3>
-                        <div class="flex items-center text-xs mb-2 text-yellow-500">
-                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
-                            <span class="text-gray-500 ml-1">4.9</span>
-                        </div>
-                        <div class="text-gray-500 text-xs mb-2">
-                            <i class="fas fa-download mr-1"></i> 
-                            <span class="download-counter" data-count="8400000">8.4M</span>
-                        </div>
-                        <button class="btn-download mt-auto py-1 px-3 rounded-lg w-full text-xs"
-                            onclick="startDownload(this, 'Dead Cells Mod APK','Unlock all weapons, abilities, and mutations. God mode and infinite cells for the ultimate rogue-vania experience.','#')">
-                            Download Now
-                        </button>
-                    </div>
-                </div>
-
-                <div class="game-card rounded-lg overflow-hidden flex flex-col" data-name="GRID Autosport Mod">
-                    <div class="coming-soon-image">Coming Soon</div>
-                    <div class="p-3 flex flex-col flex-grow">
-                        <h3 class="text-xs font-bold text-gray-900 mb-1 truncate">GRID Autosport Mod</h3>
-                        <div class="flex items-center text-xs mb-2 text-yellow-500">
-                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i><i class="fas fa-star"></i>
-                            <span class="text-gray-500 ml-1">5.0</span>
-                        </div>
-                        <div class="text-gray-500 text-xs mb-2">
-                            <i class="fas fa-download mr-1"></i> 
-                            <span class="download-counter" data-count="5600000">5.6M</span>
-                        </div>
-                        <button class="btn-download mt-auto py-1 px-3 rounded-lg w-full text-xs"
-                            onclick="startDownload(this, 'GRID Autosport Mod APK','Unlock all cars, tracks, and upgrades. Unlimited money and enhanced performance for the ultimate racing experience.','#')">
-                            Download Now
-                        </button>
-                    </div>
-                </div>
-
-                <div class="game-card rounded-lg overflow-hidden flex flex-col" data-name="Township Mod">
-                    <div class="coming-soon-image">Coming Soon</div>
-                    <div class="p-3 flex flex-col flex-grow">
-                        <h3 class="text-xs font-bold text-gray-900 mb-1 truncate">Township Mod</h3>
-                        <div class="flex items-center text-xs mb-2 text-yellow-500">
-                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
-                            <span class="text-gray-500 ml-1">4.8</span>
-                        </div>
-                        <div class="text-gray-500 text-xs mb-2">
-                            <i class="fas fa-download mr-1"></i> 
-                            <span class="download-counter" data-count="12700000">12.7M</span>
-                        </div>
-                        <button class="btn-download mt-auto py-1 px-3 rounded-lg w-full text-xs"
-                            onclick="startDownload(this, 'Township Mod APK','Unlimited coins, cash, and all buildings unlocked. Build your dream city without any resource limitations.','#')">
-                            Download Now
-                        </button>
-                    </div>
-                </div>
-
-                <div class="game-card rounded-lg overflow-hidden flex flex-col" data-name="TOEM: A Photo Adventure Mod">
-                    <div class="coming-soon-image">Coming Soon</div>
-                    <div class="p-3 flex flex-col flex-grow">
-                        <h3 class="text-xs font-bold text-gray-900 mb-1 truncate">TOEM: A Photo Adventure</h3>
-                        <div class="flex items-center text-xs mb-2 text-yellow-500">
-                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i><i class="fas fa-star"></i>
-                            <span class="text-gray-500 ml-1">5.0</span>
-                        </div>
-                        <div class="text-gray-500 text-xs mb-2">
-                            <i class="fas fa-download mr-1"></i> 
-                            <span class="download-counter" data-count="4300000">4.3M</span>
-                        </div>
-                        <button class="btn-download mt-auto py-1 px-3 rounded-lg w-full text-xs"
-                            onclick="startDownload(this, 'TOEM: A Photo Adventure Mod APK','Unlock all camera equipment and photo filters. Explore the charming world without any limitations.','#')">
-                            Download Now
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Continue with the same pattern for all other game cards... -->
-
+                <!-- More hidden games would continue here -->
             </div>
 
             <div id="no-results" class="text-center text-gray-500 text-lg mt-8 hidden">
@@ -705,7 +507,7 @@
             
             <div id="see-more-container" class="text-center mt-6">
                 <button id="see-more-btn" class="btn-see-more text-white font-bold py-2 px-6 rounded-full text-sm shadow-lg transition duration-300 ease-in-out">
-                    See More
+                    See More Games
                 </button>
             </div>
 
@@ -737,10 +539,10 @@
 
     <!-- Installation Notifications -->
     <div id="install-notification" class="install-notification">
-        <div class="user-avatar">S</div>
+        <div class="user-avatar" id="user-avatar">S</div>
         <div>
-            <p class="text-sm font-medium text-gray-900">Sarah just installed</p>
-            <p class="text-xs text-gray-500">Baseball9 Mod</p>
+            <p class="text-sm font-medium text-gray-900" id="user-name">Sarah just installed</p>
+            <p class="text-xs text-gray-500" id="game-name">Baseball9 Mod</p>
         </div>
     </div>
 
@@ -813,6 +615,33 @@
     </div>
     
     <script>
+        // User names and games for notifications
+        const userNames = [
+            "Jack", "James", "John", "Michael", "Robert", "David", "William",
+            "Samantha", "Chloe", "Lily", "Madison", "Abigail", "Victoria", "Ella",
+            "Zoe", "Claire", "Kate", "Hailey", "Brooke", "Isabella", "Mia", "Avery",
+            "Charlotte", "Allison", "Lucy", "Kayla", "Leah", "Stella", "Kimberly",
+            "Morgan", "Taylor", "Faith", "Caroline", "Amber", "Danielle", "Sydney",
+            "Paige", "Naomi", "Lila", "Erin", "Daniel", "Matthew", "Andrew", "Ryan",
+            "Nathan", "Joseph", "Samuel", "Anthony", "Christopher", "Adam", "Jonathan",
+            "Benjamin", "Nicholas", "Alexander", "Tyler", "Justin", "Jason", "Eric",
+            "Kevin", "Brian", "Aaron", "Patrick", "Kyle", "Brandon", "Logan", "Owen",
+            "Sean", "Luke", "Ethan", "Dylan", "Gabriel", "Hunter", "Cole", "Zachary",
+            "Elijah", "Caleb", "Jordan", "Austin", "Blake", "Thomas", "Nicole", "Emily",
+            "Jessica", "Sarah", "Emma", "Olivia", "Hannah", "Grace", "Megan", "Lauren",
+            "Amanda", "Rachel", "Rebecca", "Jennifer", "Melissa", "Julia", "Natalie",
+            "Cody", "Connor", "Jared", "Alex", "Casey", "Riley", "Jamie", "Jordan",
+            "Cameron", "Taylor", "Morgan", "Avery"
+        ];
+
+        const gameNames = [
+            "Clash Royale Mod", "Brawl Stars Mod", "Minecraft Mod", "Subway Surfers Mod",
+            "Baseball9 Mod", "Hollow Knight Silksong Mod", "Clash of Clans Mod",
+            "Asphalt 9 Legends", "DLS 22 Mod", "Hitman: Absolution", "WWE 2K25: Netflix Ed.",
+            "Balatro Mod", "Royal Match Mod", "Slay the Spire Mod", "Stardew Valley Mod",
+            "Dead Cells Mod", "GRID Autosport Mod", "Township Mod", "TOEM: A Photo Adventure"
+        ];
+
         // Download counter functionality
         function startDownload(buttonElement, title, description, downloadLink) {
             const gameCard = buttonElement.closest('.game-card');
@@ -873,7 +702,7 @@
             requestAnimationFrame(updateCounter);
         }
 
-        // Rest of the JavaScript remains the same as before
+        // DOM elements
         const gameModal = document.getElementById('gameModal');
         const contactModal = document.getElementById('contactModal');
         const successModal = document.getElementById('successModal');
@@ -881,15 +710,21 @@
         const menuBtn = document.getElementById('menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         const modalConfirmBtn = document.getElementById('modal-confirm-btn');
-        const backHomeBtn = document.getElementById('back-home-btn');
         const mainSearchInput = document.getElementById('mainSearchInput');
         const installNotification = document.getElementById('install-notification');
+        const userAvatar = document.getElementById('user-avatar');
+        const userName = document.getElementById('user-name');
+        const gameName = document.getElementById('game-name');
+        const seeMoreBtn = document.getElementById('see-more-btn');
+        const gamesGrid = document.getElementById('games-grid');
         
         let currentDownloadLink = '';
+        let notificationInterval;
         
+        // Mobile menu toggle
         menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
 
-        // Search functionality with Back Home button
+        // Search functionality
         mainSearchInput.addEventListener('input', (e) => {
             const searchTerm = e.target.value.toLowerCase();
             const allGameCards = document.querySelectorAll('.game-card');
@@ -903,28 +738,6 @@
             });
 
             noResults.classList.toggle('hidden', visibleCount > 0);
-            
-            // Show/hide back home button based on search
-            if (searchTerm.length > 0) {
-                backHomeBtn.classList.remove('hidden');
-                document.getElementById('see-more-container').style.display = 'none';
-            } else {
-                backHomeBtn.classList.add('hidden');
-                setupSeeMore();
-            }
-        });
-
-        // Back Home functionality
-        backHomeBtn.addEventListener('click', () => {
-            mainSearchInput.value = '';
-            const allGameCards = document.querySelectorAll('.game-card');
-            allGameCards.forEach(card => {
-                card.style.display = 'flex';
-            });
-            document.getElementById('no-results').classList.add('hidden');
-            backHomeBtn.classList.add('hidden');
-            setupSeeMore();
-            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
 
         function openModal(buttonElement, title, description, downloadLink) {
@@ -1027,74 +840,56 @@
             setTimeout(openSuccessModal, 350);  
         });
 
-        // --- See More Logic ---
-        const seeMoreContainer = document.getElementById('see-more-container');
-        const seeMoreBtn = document.getElementById('see-more-btn');
-        const allModsCards = Array.from(document.querySelectorAll('#games-grid .game-card'));
-        const initialVisibleCount = 10;
-
-        function setupSeeMore() {
-            if (allModsCards.length <= initialVisibleCount) {
-                seeMoreContainer.style.display = 'none';
-                return;
-            } else {
-                seeMoreContainer.style.display = 'block';
-            }
-
-            // Hide games beyond the initial count in the *All Mods* section
-            allModsCards.forEach((card, index) => {
-                card.style.display = index < initialVisibleCount ? 'flex' : 'none';
-            });
-            
-            seeMoreBtn.textContent = 'See More';
-            seeMoreBtn.classList.remove('btn-see-less');
-            seeMoreBtn.classList.add('btn-see-more');
-            seeMoreBtn.dataset.state = 'collapsed';
-        }
-
+        // See More functionality
+        let isExpanded = false;
         seeMoreBtn.addEventListener('click', () => {
-            const isCollapsed = seeMoreBtn.dataset.state === 'collapsed';
-
-            if (isCollapsed) {
-                // Show all games in the *All Mods* section
-                allModsCards.forEach(card => card.style.display = 'flex');
+            const hiddenCards = document.querySelectorAll('#games-grid .game-card.hidden');
+            
+            if (!isExpanded) {
+                // Show all hidden games
+                hiddenCards.forEach(card => {
+                    card.classList.remove('hidden');
+                });
                 seeMoreBtn.textContent = 'See Less';
-                seeMoreBtn.classList.remove('btn-see-more');
-                seeMoreBtn.classList.add('btn-see-less');
-                seeMoreBtn.dataset.state = 'expanded';
+                isExpanded = true;
             } else {
-                // Collapse back to initial view
-                allModsCards.forEach((card, index) => {
-                    if (index >= initialVisibleCount) {
-                        card.style.display = 'none';
+                // Hide all but first 4 games
+                const allCards = document.querySelectorAll('#games-grid .game-card');
+                allCards.forEach((card, index) => {
+                    if (index >= 4) {
+                        card.classList.add('hidden');
                     }
                 });
-                seeMoreBtn.textContent = 'See More';
-                seeMoreBtn.classList.remove('btn-see-less');
-                seeMoreBtn.classList.add('btn-see-more');
-                seeMoreBtn.dataset.state = 'collapsed';
-                document.getElementById('all-mods-header').scrollIntoView({ behavior: 'smooth', block: 'center' });
+                seeMoreBtn.textContent = 'See More Games';
+                isExpanded = false;
+                // Scroll to the top of the games section
+                document.getElementById('all-mods-header').scrollIntoView({ behavior: 'smooth' });
             }
         });
-        
-        // Initial setup on page load
-        setupSeeMore();
-        
+
         // Fake installation notifications
         function showInstallNotification() {
+            const randomUser = userNames[Math.floor(Math.random() * userNames.length)];
+            const randomGame = gameNames[Math.floor(Math.random() * gameNames.length)];
+            
+            userAvatar.textContent = randomUser.charAt(0);
+            userName.textContent = `${randomUser} just installed`;
+            gameName.textContent = randomGame;
+            
             installNotification.classList.add('show');
             
             // Hide after 5 seconds
             setTimeout(() => {
                 installNotification.classList.remove('show');
-                
-                // Show again after 10 seconds
-                setTimeout(showInstallNotification, 10000);
             }, 5000);
         }
         
         // Start the notification cycle after page load
-        setTimeout(showInstallNotification, 3000);
+        setTimeout(() => {
+            showInstallNotification();
+            // Show notification every 5 seconds
+            notificationInterval = setInterval(showInstallNotification, 5000);
+        }, 3000);
     </script>
 </body>
 </html>
