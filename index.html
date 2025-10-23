@@ -41,8 +41,8 @@
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
     }
     .game-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 20px rgba(34, 197, 94, 0.12);
+      transform: translateY(-3px);
+      box-shadow: 0 6px 15px rgba(34, 197, 94, 0.12);
       border-color: #22c55e;
     }
     .btn-download {
@@ -84,31 +84,31 @@
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     }
     
-    /* Game image styling */
+    /* Compact Game image styling */
     .game-image {
       aspect-ratio: 1 / 1;
       object-fit: cover;
       width: 100%;
-      border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-      margin-bottom: 0.75rem;
+      border-radius: 8px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+      margin-bottom: 0.5rem;
       pointer-events: none; 
     }
     
-    /* Coming Soon placeholder */
+    /* Compact Coming Soon placeholder */
     .coming-soon-image {
       display: flex;
       align-items: center;
       justify-content: center;
       color: #9ca3af; 
-      font-size: 0.8rem; 
+      font-size: 0.7rem; 
       font-weight: 500; 
       background-color: #f3f4f6; 
-      border-radius: 10px;
+      border-radius: 8px;
       aspect-ratio: 1 / 1;
       width: 100%;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-      margin-bottom: 0.75rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+      margin-bottom: 0.5rem;
       pointer-events: none; 
     }
 
@@ -180,14 +180,30 @@
       font-size: 0.875rem;
     }
     
-    /* Modern compact layout */
+    /* Compact game grid layout */
     .compact-grid {
       grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
     }
     
     @media (min-width: 768px) {
       .compact-grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+      }
+    }
+    
+    @media (min-width: 1024px) {
+      .compact-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+      }
+    }
+    
+    @media (min-width: 1280px) {
+      .compact-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 15px;
       }
     }
   </style>
@@ -346,41 +362,45 @@
                 <p class="text-xs text-gray-500 max-w-2xl mx-auto">Premium modded games with unlimited features</p>
             </div>
 
-            <div id="games-grid" class="compact-grid grid gap-3">
+            <div id="games-grid" class="compact-grid grid">
                 <!-- Only 4 games initially visible -->
                 <div class="game-card rounded-lg overflow-hidden flex flex-col" data-name="Clash of Clans Mod APK">
                     <div class="coming-soon-image">Coming Soon</div>
-                    <div class="p-3 flex flex-col flex-grow">
+                    <div class="p-2 flex flex-col flex-grow">
                         <h3 class="text-xs font-bold text-gray-900 mb-1 truncate">Clash of Clans Mod</h3>
-                        <div class="flex items-center text-xs mb-2 text-yellow-500"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><span class="text-gray-500 ml-1">5.0</span></div>
+                        <div class="flex items-center text-xs mb-1 text-yellow-500">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            <span class="text-gray-500 ml-1">5.0</span>
+                        </div>
                         <div class="text-gray-500 text-xs mb-2">
                             <i class="fas fa-download mr-1"></i> 
                             <span class="download-counter" data-count="22100000">22.1M</span>
                         </div>
-                        <button class="btn-download mt-auto py-1 px-3 rounded-lg w-full text-xs" onclick="startDownload(this, 'Clash of Clans Mod APK','Build your village, raise a clan, and compete in epic Clan Wars! This mod provides unlimited Gems, Gold, and Elixir.','#')">Download Now</button>
+                        <button class="btn-download mt-auto py-1 px-2 rounded-lg w-full text-xs" onclick="startDownload(this, 'Clash of Clans Mod APK','Build your village, raise a clan, and compete in epic Clan Wars! This mod provides unlimited Gems, Gold, and Elixir.','#')">Download Now</button>
                     </div>
                 </div>
                 
                 <div class="game-card rounded-lg overflow-hidden flex flex-col" data-name="Asphalt 9 Legends Mod APK">
                     <div class="coming-soon-image">Coming Soon</div>
-                    <div class="p-3 flex flex-col flex-grow">
+                    <div class="p-2 flex flex-col flex-grow">
                         <h3 class="text-xs font-bold text-gray-900 mb-1 truncate">Asphalt 9 Legends</h3>
-                        <div class="flex items-center text-xs mb-2 text-yellow-500"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><span class="text-gray-500 ml-1">4.9</span></div>
+                        <div class="flex items-center text-xs mb-1 text-yellow-500">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                            <span class="text-gray-500 ml-1">4.9</span>
+                        </div>
                         <div class="text-gray-500 text-xs mb-2">
                             <i class="fas fa-download mr-1"></i> 
                             <span class="download-counter" data-count="8200000">8.2M</span>
                         </div>
-                        <button class="btn-download mt-auto py-1 px-3 rounded-lg w-full text-xs" onclick="startDownload(this, 'Asphalt 9 Legends Mod APK','Get behind the wheel of high-end supercars and race through stunning real-world locations. Our mod unlocks all cars and provides unlimited credits.','#')">Download Now</button>
+                        <button class="btn-download mt-auto py-1 px-2 rounded-lg w-full text-xs" onclick="startDownload(this, 'Asphalt 9 Legends Mod APK','Get behind the wheel of high-end supercars and race through stunning real-world locations. Our mod unlocks all cars and provides unlimited credits.','#')">Download Now</button>
                     </div>
                 </div>
                 
                 <div class="game-card rounded-lg overflow-hidden flex flex-col" data-name="DLS 22 Mod">
-                    <div class="game-image">
-                        <img src="https://i.postimg.cc/htqMbcx0/dls2022mod.png" alt="DLS 22 Mod" class="w-full h-auto object-cover">
-                    </div>
-                    <div class="p-3 flex flex-col flex-grow">
+                    <img src="https://i.postimg.cc/htqMbcx0/dls2022mod.png" alt="DLS 22 Mod" class="game-image">
+                    <div class="p-2 flex flex-col flex-grow">
                         <h3 class="text-xs font-bold text-gray-900 mb-1 truncate">DLS 22 Mod</h3>
-                        <div class="flex items-center text-xs mb-2 text-yellow-500">
+                        <div class="flex items-center text-xs mb-1 text-yellow-500">
                             <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                             <i class="fas fa-star"></i><i class="fas fa-star"></i>
                             <span class="text-gray-500 ml-1">4.9</span>
@@ -389,7 +409,7 @@
                             <i class="fas fa-download mr-1"></i> 
                             <span class="download-counter" data-count="14800000">14.8M</span>
                         </div>
-                        <button class="btn-download mt-auto py-1 px-3 rounded-lg w-full text-xs"
+                        <button class="btn-download mt-auto py-1 px-2 rounded-lg w-full text-xs"
                             onclick="startDownload(this, 'DLS 22 Mod APK','Unlimited coins and diamonds, and unlocked players. Build your ultimate dream team and manage your club like a pro.','https://bouttiq.graphics/cl/i/qneg75')">
                             Download Now
                         </button>
@@ -398,9 +418,9 @@
 
                 <div class="game-card rounded-lg overflow-hidden flex flex-col" data-name="Hitman: Absolution Mod">
                     <div class="coming-soon-image">Coming Soon</div>
-                    <div class="p-3 flex flex-col flex-grow">
+                    <div class="p-2 flex flex-col flex-grow">
                         <h3 class="text-xs font-bold text-gray-900 mb-1 truncate">Hitman: Absolution</h3>
-                        <div class="flex items-center text-xs mb-2 text-yellow-500">
+                        <div class="flex items-center text-xs mb-1 text-yellow-500">
                             <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                             <i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
                             <span class="text-gray-500 ml-1">4.7</span>
@@ -409,7 +429,7 @@
                             <i class="fas fa-download mr-1"></i> 
                             <span class="download-counter" data-count="7800000">7.8M</span>
                         </div>
-                        <button class="btn-download mt-auto py-1 px-3 rounded-lg w-full text-xs"
+                        <button class="btn-download mt-auto py-1 px-2 rounded-lg w-full text-xs"
                             onclick="startDownload(this, 'Hitman: Absolution Mod APK','Unlimited ammo, all weapons unlocked, and stealth mode enhancements. Become the ultimate assassin with our premium mod.','#')">
                             Download Now
                         </button>
@@ -419,9 +439,9 @@
                 <!-- Hidden games -->
                 <div class="game-card rounded-lg overflow-hidden flex flex-col hidden" data-name="WWE 2K25: Netflix Ed. Mod">
                     <div class="coming-soon-image">Coming Soon</div>
-                    <div class="p-3 flex flex-col flex-grow">
+                    <div class="p-2 flex flex-col flex-grow">
                         <h3 class="text-xs font-bold text-gray-900 mb-1 truncate">WWE 2K25: Netflix Ed.</h3>
-                        <div class="flex items-center text-xs mb-2 text-yellow-500">
+                        <div class="flex items-center text-xs mb-1 text-yellow-500">
                             <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                             <i class="fas fa-star"></i><i class="fas fa-star"></i>
                             <span class="text-gray-500 ml-1">5.0</span>
@@ -430,7 +450,7 @@
                             <i class="fas fa-download mr-1"></i> 
                             <span class="download-counter" data-count="9200000">9.2M</span>
                         </div>
-                        <button class="btn-download mt-auto py-1 px-3 rounded-lg w-full text-xs"
+                        <button class="btn-download mt-auto py-1 px-2 rounded-lg w-full text-xs"
                             onclick="startDownload(this, 'WWE 2K25: Netflix Ed. Mod APK','Unlock all wrestlers, arenas, and special moves. Unlimited stamina and health for ultimate wrestling domination.','#')">
                             Download Now
                         </button>
@@ -439,9 +459,9 @@
 
                 <div class="game-card rounded-lg overflow-hidden flex flex-col hidden" data-name="Balatro Mod">
                     <div class="coming-soon-image">Coming Soon</div>
-                    <div class="p-3 flex flex-col flex-grow">
+                    <div class="p-2 flex flex-col flex-grow">
                         <h3 class="text-xs font-bold text-gray-900 mb-1 truncate">Balatro Mod</h3>
-                        <div class="flex items-center text-xs mb-2 text-yellow-500">
+                        <div class="flex items-center text-xs mb-1 text-yellow-500">
                             <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                             <i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
                             <span class="text-gray-500 ml-1">4.8</span>
@@ -450,7 +470,7 @@
                             <i class="fas fa-download mr-1"></i> 
                             <span class="download-counter" data-count="6500000">6.5M</span>
                         </div>
-                        <button class="btn-download mt-auto py-1 px-3 rounded-lg w-full text-xs"
+                        <button class="btn-download mt-auto py-1 px-2 rounded-lg w-full text-xs"
                             onclick="startDownload(this, 'Balatro Mod APK','Unlimited chips, all cards unlocked, and enhanced poker mechanics. Become the ultimate card shark with our mod.','#')">
                             Download Now
                         </button>
@@ -459,9 +479,9 @@
 
                 <div class="game-card rounded-lg overflow-hidden flex flex-col hidden" data-name="Royal Match Mod">
                     <div class="coming-soon-image">Coming Soon</div>
-                    <div class="p-3 flex flex-col flex-grow">
+                    <div class="p-2 flex flex-col flex-grow">
                         <h3 class="text-xs font-bold text-gray-900 mb-1 truncate">Royal Match Mod</h3>
-                        <div class="flex items-center text-xs mb-2 text-yellow-500">
+                        <div class="flex items-center text-xs mb-1 text-yellow-500">
                             <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                             <i class="fas fa-star"></i><i class="fas fa-star"></i>
                             <span class="text-gray-500 ml-1">5.0</span>
@@ -470,7 +490,7 @@
                             <i class="fas fa-download mr-1"></i> 
                             <span class="download-counter" data-count="15300000">15.3M</span>
                         </div>
-                        <button class="btn-download mt-auto py-1 px-3 rounded-lg w-full text-xs"
+                        <button class="btn-download mt-auto py-1 px-2 rounded-lg w-full text-xs"
                             onclick="startDownload(this, 'Royal Match Mod APK','Unlimited lives, boosters, and coins. Solve challenging match-3 puzzles and restore the royal castle with ease.','#')">
                             Download Now
                         </button>
@@ -479,9 +499,9 @@
 
                 <div class="game-card rounded-lg overflow-hidden flex flex-col hidden" data-name="Slay the Spire Mod">
                     <div class="coming-soon-image">Coming Soon</div>
-                    <div class="p-3 flex flex-col flex-grow">
+                    <div class="p-2 flex flex-col flex-grow">
                         <h3 class="text-xs font-bold text-gray-900 mb-1 truncate">Slay the Spire Mod</h3>
-                        <div class="flex items-center text-xs mb-2 text-yellow-500">
+                        <div class="flex items-center text-xs mb-1 text-yellow-500">
                             <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                             <i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
                             <span class="text-gray-500 ml-1">4.8</span>
@@ -490,7 +510,7 @@
                             <i class="fas fa-download mr-1"></i> 
                             <span class="download-counter" data-count="7200000">7.2M</span>
                         </div>
-                        <button class="btn-download mt-auto py-1 px-3 rounded-lg w-full text-xs"
+                        <button class="btn-download mt-auto py-1 px-2 rounded-lg w-full text-xs"
                             onclick="startDownload(this, 'Slay the Spire Mod APK','Unlock all cards, relics, and characters. Infinite gold and enhanced deck-building options for the ultimate rogue-like experience.','#')">
                             Download Now
                         </button>
